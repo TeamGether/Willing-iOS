@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         btn.layer.cornerRadius = 10
         
         btn.layer.shadowColor = UIColor.gray.cgColor
-        btn.layer.shadowOpacity = 1
+        btn.layer.shadowOpacity = 0.5
         btn.layer.shadowOffset = CGSize.init(width: 3.0, height: 3.0)
         btn.layer.shadowRadius = 3
         
