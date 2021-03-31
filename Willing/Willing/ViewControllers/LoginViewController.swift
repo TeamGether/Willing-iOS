@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         setTxtField(txtField: emailTxtField)
         setTxtField(txtField: pwdTxtField)
         setBtnUI(btn: loginBtn)
@@ -50,7 +54,12 @@ class LoginViewController: UIViewController {
         txtField.layer.addBorder([.bottom], color: UIColor.gray, width: 1)
     }
     
-   
+    @IBAction func SignUpBtnClicked(_ sender: Any) {
+        let vc = SignUpViewController()
+//        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
     
     // MARK: - 적합한 위치 찾기

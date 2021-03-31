@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC725692611660C00559D6C /* LoginViewController.swift */; };
 		3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7256A2611660C00559D6C /* LoginViewController.xib */; };
 		3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7256E2611BB2900559D6C /* GoogleService-Info.plist */; };
+		3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7257026132BB900559D6C /* SignUpViewController.swift */; };
+		3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7257126132BB900559D6C /* SignUpViewController.xib */; };
 		B4EE68E105F154EA64B2183B /* Pods_Willing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812EF43E5C90B953102B5421 /* Pods_Willing.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		3BC725692611660C00559D6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3BC7256A2611660C00559D6C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3BC7256E2611BB2900559D6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BC7257026132BB900559D6C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3BC7257126132BB900559D6C /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		707DCD4EEE9C38929E2B11D4 /* Pods-Willing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.debug.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.debug.xcconfig"; sourceTree = "<group>"; };
 		7B715E14AFF67DD482DDAE6E /* Pods-Willing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.release.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.release.xcconfig"; sourceTree = "<group>"; };
 		812EF43E5C90B953102B5421 /* Pods_Willing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,8 @@
 			children = (
 				3BC725692611660C00559D6C /* LoginViewController.swift */,
 				3BC7256A2611660C00559D6C /* LoginViewController.xib */,
+				3BC7257026132BB900559D6C /* SignUpViewController.swift */,
+				3BC7257126132BB900559D6C /* SignUpViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */,
 				3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */,
 				3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */,
 				3B8F4D28260C929A00B7DA1F /* LaunchScreen.storyboard in Resources */,
@@ -220,6 +227,7 @@
 			files = (
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
+				3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */,
 				3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
