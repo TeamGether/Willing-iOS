@@ -56,7 +56,7 @@
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6g-zR-72J">
                                             <rect key="frame" x="0.0" y="118.5" width="275" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.85098039219999999" green="0.92156862750000001" blue="0.94117647059999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Ehg-u0-BUO"/>
                                             </constraints>
@@ -64,10 +64,13 @@
                                             <state key="normal" title="로그인">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="LoginBtnClicked:" destination="-1" eventType="touchUpInside" id="XT0-qT-B82"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhK-zB-Tyw">
                                             <rect key="frame" x="0.0" y="197" width="275" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.85098039219999999" green="0.92156862750000001" blue="0.94117647059999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="eke-AL-9QH"/>
                                             </constraints>
