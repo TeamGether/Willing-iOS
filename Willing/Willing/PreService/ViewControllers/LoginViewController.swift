@@ -56,8 +56,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginBtnClicked(_ sender: Any) {
-        let email = emailTxtField.text
-        let pwd = pwdTxtField.text
+//        let email = emailTxtField.text
+//        let pwd = pwdTxtField.text
+        let email: String? = "skycat0212@jejunu.ac.kr"
+        let pwd: String? = "123456"
         if email == "" || pwd == "" {
             return
         }
@@ -67,19 +69,20 @@ class LoginViewController: UIViewController {
                 print("error : ", error)
               guard let strongSelf = self else { return }
               // ...
-                let user = Auth.auth().currentUser;
-                print("user : ", user)
+                let loginUser = Auth.auth().currentUser;
+                print("loginUser : ", loginUser)
                 if authResult == nil {
                     let alertController = UIAlertController(title: "사용자 정보 없음", message: "가입되지 않은 계정이거나, 비밀번호가 틀렸습니다.", preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alertController.addAction(okButton)
                     self?.present(alertController, animated: true, completion: nil)
-                } else if user?.isEmailVerified == false {
+                } else if loginUser?.isEmailVerified == false {
                     let alertController = UIAlertController(title: "이메일 인증 필요", message: "이메일을 확인하여 메일 인증을 진행해주세요.", preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alertController.addAction(okButton)
                     self?.present(alertController, animated: true, completion: nil)
                 } else {
+                    user = loginUser
                     self?.toMainView()
 
                 }

@@ -30,6 +30,10 @@
 		3BFD9BA6261F01E200F587B4 /* MyPageViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BA4261F01E200F587B4 /* MyPageViewContoller.xib */; };
 		3BFD9BA9262171B000F587B4 /* CALayer+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BA8262171B000F587B4 /* CALayer+Border.swift */; };
 		3BFD9BAB2621720E00F587B4 /* UInt+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BAA2621720E00F587B4 /* UInt+Color.swift */; };
+		3BFD9BB32625B65600F587B4 /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB12625B65600F587B4 /* ChallengeTableViewCell.swift */; };
+		3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */; };
+		3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */; };
+		3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */; };
 		B4EE68E105F154EA64B2183B /* Pods_Willing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812EF43E5C90B953102B5421 /* Pods_Willing.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +63,10 @@
 		3BFD9BA4261F01E200F587B4 /* MyPageViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewContoller.xib; sourceTree = "<group>"; };
 		3BFD9BA8262171B000F587B4 /* CALayer+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Border.swift"; sourceTree = "<group>"; };
 		3BFD9BAA2621720E00F587B4 /* UInt+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt+Color.swift"; sourceTree = "<group>"; };
+		3BFD9BB12625B65600F587B4 /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
+		3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
+		3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetwork.swift; sourceTree = "<group>"; };
 		707DCD4EEE9C38929E2B11D4 /* Pods-Willing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.debug.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.debug.xcconfig"; sourceTree = "<group>"; };
 		7B715E14AFF67DD482DDAE6E /* Pods-Willing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.release.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.release.xcconfig"; sourceTree = "<group>"; };
 		812EF43E5C90B953102B5421 /* Pods_Willing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +114,7 @@
 		3B8F4D1A260C929700B7DA1F /* Willing */ = {
 			isa = PBXGroup;
 			children = (
+				3BFD9BB72626CE3700F587B4 /* Network */,
 				3BFD9BAC2625647000F587B4 /* PreService */,
 				3BFD9BAF262564C400F587B4 /* MainService */,
 				3BFD9BA72621717F00F587B4 /* extension */,
@@ -140,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3BC725752616B65D00559D6C /* UserModel.swift */,
+				3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,10 +194,28 @@
 		3BFD9BAF262564C400F587B4 /* MainService */ = {
 			isa = PBXGroup;
 			children = (
+				3BFD9BB02625B62C00F587B4 /* Cell */,
 				3BC725742616B63500559D6C /* Model */,
 				3BC7256D2611661200559D6C /* ViewControllers */,
 			);
 			path = MainService;
+			sourceTree = "<group>";
+		};
+		3BFD9BB02625B62C00F587B4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD9BB12625B65600F587B4 /* ChallengeTableViewCell.swift */,
+				3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3BFD9BB72626CE3700F587B4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D42F7E0D9A60F26FD7321AA5 /* Frameworks */ = {
@@ -260,6 +288,7 @@
 			files = (
 				3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */,
 				3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */,
+				3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */,
 				3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */,
 				3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */,
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
@@ -325,9 +354,12 @@
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
+				3BFD9BB32625B65600F587B4 /* ChallengeTableViewCell.swift in Sources */,
 				3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */,
 				3BFD9BA1261F01C100F587B4 /* FriendsViewController.swift in Sources */,
 				3BC725782616B67900559D6C /* SignUpModel.swift in Sources */,
+				3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */,
+				3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */,
 				3BFD9BA5261F01E200F587B4 /* MyPageViewContoller.swift in Sources */,
 				3BC725762616B65D00559D6C /* UserModel.swift in Sources */,
 				3BFD9BAB2621720E00F587B4 /* UInt+Color.swift in Sources */,

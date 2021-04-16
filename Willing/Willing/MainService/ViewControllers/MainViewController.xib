@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Willing" customModuleProvider="target">
             <connections>
-                <outlet property="addChallengeBtn" destination="NK4-fz-5uY" id="G3c-5F-KA4"/>
+                <outlet property="challengeList" destination="RYk-lJ-FUy" id="uFM-H7-KvM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,19 +18,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK4-fz-5uY">
-                    <rect key="frame" x="68" y="382" width="278" height="132"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                    <state key="normal" title="Button"/>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYk-lJ-FUy">
+                    <rect key="frame" x="20" y="124" width="374" height="718"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-Ex-9tC">
+                    <rect key="frame" x="20" y="44" width="374" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진행중인 목표" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFY-5q-tQ8">
+                            <rect key="frame" x="0.0" y="22" width="163" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="zFY-5q-tQ8" firstAttribute="leading" secondItem="dzO-Ex-9tC" secondAttribute="leading" id="Bei-3b-UN3"/>
+                        <constraint firstItem="zFY-5q-tQ8" firstAttribute="centerY" secondItem="dzO-Ex-9tC" secondAttribute="centerY" id="b75-ng-Hs3"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="NK4-fz-5uY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Lcb-JO-121"/>
-                <constraint firstItem="NK4-fz-5uY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cav-hi-1RZ"/>
+                <constraint firstItem="RYk-lJ-FUy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0gl-7R-vxe"/>
+                <constraint firstItem="dzO-Ex-9tC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3ya-HB-Bct"/>
+                <constraint firstItem="RYk-lJ-FUy" firstAttribute="top" secondItem="dzO-Ex-9tC" secondAttribute="bottom" id="KO2-PB-d5e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RYk-lJ-FUy" secondAttribute="bottom" constant="20" id="NkR-Zf-meN"/>
+                <constraint firstItem="RYk-lJ-FUy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="RAh-Ne-VLG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RYk-lJ-FUy" secondAttribute="trailing" constant="20" id="YC3-ix-8PX"/>
+                <constraint firstItem="dzO-Ex-9tC" firstAttribute="leading" secondItem="RYk-lJ-FUy" secondAttribute="leading" id="kwX-pt-zLs"/>
+                <constraint firstItem="RYk-lJ-FUy" firstAttribute="trailing" secondItem="dzO-Ex-9tC" secondAttribute="trailing" id="mnK-PP-fNR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </view>
     </objects>
 </document>
