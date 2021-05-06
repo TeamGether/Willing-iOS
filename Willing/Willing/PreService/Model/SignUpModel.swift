@@ -19,7 +19,7 @@ struct SignUpUser {
     func signUp(completion: @escaping(Bool) -> Void) {
         if let email = email, let pwd = pwd {
             Auth.auth().createUser(withEmail: email, password: pwd) { authResult, error in
-              // ...
+                // ...
                 if error != nil {
                     print("Error \(error) : 에러발생")
                     completion(false)
@@ -29,26 +29,26 @@ struct SignUpUser {
                         db.collection("User").document().setData([
                             "name": name, "email": email, "donateName": donateName,
                             "tobe": "", "profile": "" ]) { err in
-                            if let err = err {
-                                print("Error writing document: \(err)")
-                                print("Error \(err) : 에러발생")
-                                completion(false)
-                            } else {
-                                print("Document successfully written!")
-                                print("authResult : ", authResult)
-                                print("currentUser : ", Auth.auth().currentUser)
-                                Auth.auth().currentUser?.sendEmailVerification { (error) in
-                                  // ...
-                                    print("mail error : ", error)
+                                if let err = err {
+                                    print("Error writing document: \(err)")
+                                    print("Error \(err) : 에러발생")
+                                    completion(false)
+                                } else {
+                                    print("Document successfully written!")
+                                    print("authResult : ", authResult)
+                                    print("currentUser : ", Auth.auth().currentUser)
+                                    Auth.auth().currentUser?.sendEmailVerification { (error) in
+                                        // ...
+                                        print("mail error : ", error)
+                                    }
+                                    completion(true)
                                 }
-                                completion(true)
-                            }
                         }
                     }
                 }
             }
         }
-
+        
     }
     
     func existSameName(completion: @escaping (Bool, String) -> Void) {
@@ -169,8 +169,41 @@ struct SignUpUser {
             annotLabel.textColor = UIColor.systemRed
             annotLabel.isHidden = false
         } else { annotLabel.isHidden = true }
-
+        
         return isValid
     }
     
 }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//var email: String? = ""
+//var pwd: String? = ""
+//extension {
+//
+//    func signUp(completion: @escaping(Bool) -> Void) {
+//        if let email = email, let pwd = pwd {
+//            Auth.auth().createUser(withEmail: email, password: pwd) { authResult, error in
+//                if error != nil { completion(false) }
+//                else {
+//                    if let name = self.name, let donateName = self.donateName {
+//                        let db = Firestore.firestore()
+//                        db.collection("User").document().setData([
+//                            "name": name, "email": email, "donateName": donateName, "tobe": "", "profile": "" ])
+//                        { err in if let err = err { completion(false) }
+//                        else {
+//                            Auth.auth().currentUser?.sendEmailVerification { (error) in }
+//                            completion(true)
+//                            }   }   }   }   }   }   }
+//
+//}
+//
+//

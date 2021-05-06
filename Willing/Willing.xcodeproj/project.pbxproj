@@ -20,6 +20,8 @@
 		3BC725782616B67900559D6C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC725772616B67900559D6C /* SignUpModel.swift */; };
 		3BC7257B26199BAD00559D6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7257926199BAD00559D6C /* MainViewController.swift */; };
 		3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7257A26199BAD00559D6C /* MainViewController.xib */; };
+		3BF5699E263EF4BF003B0EEA /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */; };
+		3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */; };
 		3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B97261F017C00F587B4 /* RankingViewController.swift */; };
 		3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9B98261F017C00F587B4 /* RankingViewController.xib */; };
 		3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B9B261F019800F587B4 /* FeedViewController.swift */; };
@@ -34,6 +36,14 @@
 		3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */; };
 		3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */; };
 		3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */; };
+		3BFD9BC12629B7F900F587B4 /* SelectChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */; };
+		3BFD9BC22629B7F900F587B4 /* SelectChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */; };
+		3BFD9BC5262AB83D00F587B4 /* AddChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */; };
+		3BFD9BC6262AB83D00F587B4 /* AddChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */; };
+		3BFD9BCD262B1DE300F587B4 /* DescribeChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */; };
+		3BFD9BCE262B1DE300F587B4 /* DescribeChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */; };
+		3BFD9BD1262D817E00F587B4 /* StartChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */; };
+		3BFD9BD2262D817E00F587B4 /* StartChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */; };
 		B4EE68E105F154EA64B2183B /* Pods_Willing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812EF43E5C90B953102B5421 /* Pods_Willing.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +63,8 @@
 		3BC725772616B67900559D6C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		3BC7257926199BAD00559D6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3BC7257A26199BAD00559D6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
+		3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailChallengeViewController.xib; sourceTree = "<group>"; };
 		3BFD9B97261F017C00F587B4 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		3BFD9B98261F017C00F587B4 /* RankingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingViewController.xib; sourceTree = "<group>"; };
 		3BFD9B9B261F019800F587B4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +79,14 @@
 		3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetwork.swift; sourceTree = "<group>"; };
+		3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewController.swift; sourceTree = "<group>"; };
+		3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectChallengeViewController.xib; sourceTree = "<group>"; };
+		3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
+		3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChallengeViewController.xib; sourceTree = "<group>"; };
+		3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeChallengeViewController.swift; sourceTree = "<group>"; };
+		3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescribeChallengeViewController.xib; sourceTree = "<group>"; };
+		3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChallengeViewController.swift; sourceTree = "<group>"; };
+		3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartChallengeViewController.xib; sourceTree = "<group>"; };
 		707DCD4EEE9C38929E2B11D4 /* Pods-Willing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.debug.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.debug.xcconfig"; sourceTree = "<group>"; };
 		7B715E14AFF67DD482DDAE6E /* Pods-Willing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.release.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.release.xcconfig"; sourceTree = "<group>"; };
 		812EF43E5C90B953102B5421 /* Pods_Willing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +214,7 @@
 		3BFD9BAF262564C400F587B4 /* MainService */ = {
 			isa = PBXGroup;
 			children = (
+				3BFD9BBA2629B6DD00F587B4 /* Challenge */,
 				3BFD9BB02625B62C00F587B4 /* Cell */,
 				3BC725742616B63500559D6C /* Model */,
 				3BC7256D2611661200559D6C /* ViewControllers */,
@@ -216,6 +237,23 @@
 				3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3BFD9BBA2629B6DD00F587B4 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */,
+				3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */,
+				3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */,
+				3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */,
+				3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */,
+				3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */,
+				3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */,
+				3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */,
+				3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */,
+				3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 		D42F7E0D9A60F26FD7321AA5 /* Frameworks */ = {
@@ -291,9 +329,14 @@
 				3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */,
 				3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */,
 				3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */,
+				3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */,
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
 				3BFD9BA2261F01C100F587B4 /* FriendsViewController.xib in Resources */,
+				3BFD9BCE262B1DE300F587B4 /* DescribeChallengeViewController.xib in Resources */,
 				3BFD9BA6261F01E200F587B4 /* MyPageViewContoller.xib in Resources */,
+				3BFD9BC22629B7F900F587B4 /* SelectChallengeViewController.xib in Resources */,
+				3BFD9BD2262D817E00F587B4 /* StartChallengeViewController.xib in Resources */,
+				3BFD9BC6262AB83D00F587B4 /* AddChallengeViewController.xib in Resources */,
 				3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */,
 				3B8F4D28260C929A00B7DA1F /* LaunchScreen.storyboard in Resources */,
 				3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */,
@@ -350,19 +393,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC7257B26199BAD00559D6C /* MainViewController.swift in Sources */,
+				3BFD9BD1262D817E00F587B4 /* StartChallengeViewController.swift in Sources */,
 				3BFD9BA9262171B000F587B4 /* CALayer+Border.swift in Sources */,
+				3BFD9BCD262B1DE300F587B4 /* DescribeChallengeViewController.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
 				3BFD9BB32625B65600F587B4 /* ChallengeTableViewCell.swift in Sources */,
+				3BF5699E263EF4BF003B0EEA /* DetailChallengeViewController.swift in Sources */,
 				3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */,
 				3BFD9BA1261F01C100F587B4 /* FriendsViewController.swift in Sources */,
 				3BC725782616B67900559D6C /* SignUpModel.swift in Sources */,
 				3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */,
 				3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */,
 				3BFD9BA5261F01E200F587B4 /* MyPageViewContoller.swift in Sources */,
+				3BFD9BC5262AB83D00F587B4 /* AddChallengeViewController.swift in Sources */,
 				3BC725762616B65D00559D6C /* UserModel.swift in Sources */,
 				3BFD9BAB2621720E00F587B4 /* UInt+Color.swift in Sources */,
+				3BFD9BC12629B7F900F587B4 /* SelectChallengeViewController.swift in Sources */,
 				3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */,
 				3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */,
 			);

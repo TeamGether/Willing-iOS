@@ -12,7 +12,6 @@ import Firebase
 var user: User?
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var addChallengeBtn: UIButton!
     @IBOutlet weak var challengeList: UITableView!
     var didNotLoad = true
     
@@ -27,8 +26,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBar.isHidden = true
         
         // Do any additional setup after loading the view.
         challengeList.delegate = self
@@ -37,21 +34,24 @@ class MainViewController: UIViewController {
         
         getChallengeList()
         print("chall list ", challengeSummary)
-
-    }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func getChallengeList() {
         let email = user!.email!
         let db = Firestore.firestore()
-        
         db.collection("Challenge").whereField("email", isEqualTo: email)
             .getDocuments() { [self](querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
+                if err == nil {
                     var challengeList: Array<ChallengeSummaryUnit> = []
                     for document in querySnapshot!.documents {
                         let data = document.data()
+                        print("chall sum data", data)
                         let challengeUnit = ChallengeSummaryUnit(title: data["title"]! as! String, percent: data["percent"]! as! Int )
                         challengeList.append(challengeUnit)
                     }
@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
         let nibName = UINib(nibName: "ChallengeTableViewCell", bundle: nil)
         challengeList.register(nibName, forCellReuseIdentifier: "ChallengeCell")
     }
-
+    
 }
 
 extension MainViewController : UITableViewDelegate, UITableViewDataSource{
@@ -78,7 +78,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
             return challengeSummary!.count + 1
             
         }
-//        return 10
+        //        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,8 +87,8 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
         if let challengeSummary = challengeSummary {
             if indexPath.row < challengeSummary.count {
                 cell.challengeTitleLabel.text = challengeSummary[indexPath.row].title
-//                let a = 11
-//                cell.challengeProgressPercent.text = String(a)
+                //                let a = 11
+                //                cell.challengeProgressPercent.text = String(a)
                 cell.challengeProgressPercent.text = String( challengeSummary[indexPath.row].percent)
                 cell.challengeProgressBar.progress = Float(challengeSummary[indexPath.row].percent) / 100
             } else if indexPath.row == challengeSummary.count {
@@ -98,14 +98,27 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
                 cell.addChallengeView.isHidden = false
             }
         }
-//        cell.challengeProgressPercent.text = challengeSummary?[indexPath.row].percent
+        //        cell.challengeProgressPercent.text = challengeSummary?[indexPath.row].percent
         
-//        let selectedView = UIView()
-//        selectedView.backgroundColor = .clear
-//        cell.selectedBackgroundView = selectedView
+        //        let selectedView = UIView()
+        //        selectedView.backgroundColor = .clear
+        //        cell.selectedBackgroundView = selectedView
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case challengeList.numberOfRows(inSection: 0) - 1:
+            print("clicked")
+            let vc = SelectChallengeViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        default:
+            let vc = DetailChallengeViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            break
+        }
+    }
     
 }

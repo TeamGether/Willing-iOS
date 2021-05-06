@@ -17,9 +17,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
+                
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,17 +26,6 @@ class LoginViewController: UIViewController {
         setBtnUI(btn: loginBtn)
         setBtnUI(btn: signUpBtn)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func setBtnUI(btn: UIButton) {
         btn.layer.backgroundColor = UInt(0xD9EBF0).cgColor
@@ -56,8 +43,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginBtnClicked(_ sender: Any) {
-//        let email = emailTxtField.text
-//        let pwd = pwdTxtField.text
+        //        let email = emailTxtField.text
+        //        let pwd = pwdTxtField.text
         let email: String? = "skycat0212@jejunu.ac.kr"
         let pwd: String? = "123456"
         if email == "" || pwd == "" {
@@ -67,8 +54,8 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] authResult, error in
                 print("authResult : ", authResult)
                 print("error : ", error)
-              guard let strongSelf = self else { return }
-              // ...
+                guard let strongSelf = self else { return }
+                // ...
                 let loginUser = Auth.auth().currentUser;
                 print("loginUser : ", loginUser)
                 if authResult == nil {
@@ -84,7 +71,7 @@ class LoginViewController: UIViewController {
                 } else {
                     user = loginUser
                     self?.toMainView()
-
+                    
                 }
             }
         }
@@ -92,10 +79,6 @@ class LoginViewController: UIViewController {
     }
     
     func toMainView() {
-//        let vc = MainViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: true, completion: nil)
-        
         let tabBarController = UITabBarController()
         
         let mainVC = MainViewController()
@@ -112,26 +95,18 @@ class LoginViewController: UIViewController {
         feedVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "feed"), tag: 0)
         friendsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "friends"), tag: 0)
         myPageVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "my"), tag: 0)
-                
+        
         tabBarController.viewControllers = [mainNaviVC, rankingVC, feedVC, friendsVC, myPageVC]
         
         tabBarController.modalPresentationStyle = .fullScreen
         self.present(tabBarController, animated: true, completion: nil)
         
-        
-        
     }
-    
     
     @IBAction func SignUpBtnClicked(_ sender: Any) {
         let vc = SignUpViewController()
-//        vc.modalPresentationStyle = .fullScreen
+        //        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
 }
-
-
-
-
-
