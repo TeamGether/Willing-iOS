@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B321955264FB05200D04410 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B321953264FB05200D04410 /* GenreTableViewCell.swift */; };
+		3B321956264FB05200D04410 /* GenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B321954264FB05200D04410 /* GenreTableViewCell.xib */; };
+		3B3219592652621D00D04410 /* CertificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */; };
+		3B32195A2652621D00D04410 /* CertificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */; };
+		3B32195C2653A56500D04410 /* CerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195B2653A56500D04410 /* CerificationModel.swift */; };
 		3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */; };
 		3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */; };
 		3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8F4D24260C929A00B7DA1F /* Assets.xcassets */; };
@@ -20,6 +25,17 @@
 		3BC725782616B67900559D6C /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC725772616B67900559D6C /* SignUpModel.swift */; };
 		3BC7257B26199BAD00559D6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7257926199BAD00559D6C /* MainViewController.swift */; };
 		3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7257A26199BAD00559D6C /* MainViewController.xib */; };
+		3BF0E18A264CF00900EAFD64 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E189264CF00900EAFD64 /* UIImage+Size.swift */; };
+		3BF0E191264CF7EA00EAFD64 /* MakeChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E18F264CF7EA00EAFD64 /* MakeChallengeVC.swift */; };
+		3BF0E192264CF7EA00EAFD64 /* MakeChallengeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E190264CF7EA00EAFD64 /* MakeChallengeVC.xib */; };
+		3BF0E195264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E193264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift */; };
+		3BF0E196264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E194264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib */; };
+		3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E197264E5FE000EAFD64 /* SelectGenreVC.swift */; };
+		3BF0E19A264E5FE000EAFD64 /* SelectGenreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E198264E5FE000EAFD64 /* SelectGenreVC.xib */; };
+		3BF0E19D264F978000EAFD64 /* SelectBankVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E19B264F978000EAFD64 /* SelectBankVC.swift */; };
+		3BF0E19E264F978000EAFD64 /* SelectBankVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E19C264F978000EAFD64 /* SelectBankVC.xib */; };
+		3BF0E1A1264F997200EAFD64 /* SelectBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF0E19F264F997200EAFD64 /* SelectBankTableViewCell.swift */; };
+		3BF0E1A2264F997200EAFD64 /* SelectBankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E1A0264F997200EAFD64 /* SelectBankTableViewCell.xib */; };
 		3BF5699E263EF4BF003B0EEA /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */; };
 		3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */; };
 		3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B97261F017C00F587B4 /* RankingViewController.swift */; };
@@ -36,18 +52,15 @@
 		3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */; };
 		3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */; };
 		3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */; };
-		3BFD9BC12629B7F900F587B4 /* SelectChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */; };
-		3BFD9BC22629B7F900F587B4 /* SelectChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */; };
-		3BFD9BC5262AB83D00F587B4 /* AddChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */; };
-		3BFD9BC6262AB83D00F587B4 /* AddChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */; };
-		3BFD9BCD262B1DE300F587B4 /* DescribeChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */; };
-		3BFD9BCE262B1DE300F587B4 /* DescribeChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */; };
-		3BFD9BD1262D817E00F587B4 /* StartChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */; };
-		3BFD9BD2262D817E00F587B4 /* StartChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */; };
 		B4EE68E105F154EA64B2183B /* Pods_Willing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812EF43E5C90B953102B5421 /* Pods_Willing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B321953264FB05200D04410 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
+		3B321954264FB05200D04410 /* GenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreTableViewCell.xib; sourceTree = "<group>"; };
+		3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCollectionViewCell.swift; sourceTree = "<group>"; };
+		3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CertificationCollectionViewCell.xib; sourceTree = "<group>"; };
+		3B32195B2653A56500D04410 /* CerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CerificationModel.swift; sourceTree = "<group>"; };
 		3B8F4D18260C929700B7DA1F /* Willing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +76,17 @@
 		3BC725772616B67900559D6C /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		3BC7257926199BAD00559D6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3BC7257A26199BAD00559D6C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3BF0E189264CF00900EAFD64 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
+		3BF0E18F264CF7EA00EAFD64 /* MakeChallengeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeChallengeVC.swift; sourceTree = "<group>"; };
+		3BF0E190264CF7EA00EAFD64 /* MakeChallengeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakeChallengeVC.xib; sourceTree = "<group>"; };
+		3BF0E193264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckChallengeMakeVC.swift; sourceTree = "<group>"; };
+		3BF0E194264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckChallengeMakeVC.xib; sourceTree = "<group>"; };
+		3BF0E197264E5FE000EAFD64 /* SelectGenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenreVC.swift; sourceTree = "<group>"; };
+		3BF0E198264E5FE000EAFD64 /* SelectGenreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGenreVC.xib; sourceTree = "<group>"; };
+		3BF0E19B264F978000EAFD64 /* SelectBankVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBankVC.swift; sourceTree = "<group>"; };
+		3BF0E19C264F978000EAFD64 /* SelectBankVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBankVC.xib; sourceTree = "<group>"; };
+		3BF0E19F264F997200EAFD64 /* SelectBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBankTableViewCell.swift; sourceTree = "<group>"; };
+		3BF0E1A0264F997200EAFD64 /* SelectBankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBankTableViewCell.xib; sourceTree = "<group>"; };
 		3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
 		3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailChallengeViewController.xib; sourceTree = "<group>"; };
 		3BFD9B97261F017C00F587B4 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -79,14 +103,6 @@
 		3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		3BFD9BB82626CE6100F587B4 /* DBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetwork.swift; sourceTree = "<group>"; };
-		3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectChallengeViewController.swift; sourceTree = "<group>"; };
-		3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectChallengeViewController.xib; sourceTree = "<group>"; };
-		3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
-		3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChallengeViewController.xib; sourceTree = "<group>"; };
-		3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeChallengeViewController.swift; sourceTree = "<group>"; };
-		3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescribeChallengeViewController.xib; sourceTree = "<group>"; };
-		3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChallengeViewController.swift; sourceTree = "<group>"; };
-		3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartChallengeViewController.xib; sourceTree = "<group>"; };
 		707DCD4EEE9C38929E2B11D4 /* Pods-Willing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.debug.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.debug.xcconfig"; sourceTree = "<group>"; };
 		7B715E14AFF67DD482DDAE6E /* Pods-Willing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Willing.release.xcconfig"; path = "Target Support Files/Pods-Willing/Pods-Willing.release.xcconfig"; sourceTree = "<group>"; };
 		812EF43E5C90B953102B5421 /* Pods_Willing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Willing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +186,7 @@
 			children = (
 				3BC725752616B65D00559D6C /* UserModel.swift */,
 				3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */,
+				3B32195B2653A56500D04410 /* CerificationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +196,7 @@
 			children = (
 				3BFD9BA8262171B000F587B4 /* CALayer+Border.swift */,
 				3BFD9BAA2621720E00F587B4 /* UInt+Color.swift */,
+				3BF0E189264CF00900EAFD64 /* UIImage+Size.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -195,10 +213,10 @@
 		3BFD9BAD2625649C00F587B4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3BC7257126132BB900559D6C /* SignUpViewController.xib */,
 				3BC725692611660C00559D6C /* LoginViewController.swift */,
 				3BC7256A2611660C00559D6C /* LoginViewController.xib */,
 				3BC7257026132BB900559D6C /* SignUpViewController.swift */,
-				3BC7257126132BB900559D6C /* SignUpViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -227,6 +245,12 @@
 			children = (
 				3BFD9BB12625B65600F587B4 /* ChallengeTableViewCell.swift */,
 				3BFD9BB22625B65600F587B4 /* ChallengeTableViewCell.xib */,
+				3BF0E19F264F997200EAFD64 /* SelectBankTableViewCell.swift */,
+				3BF0E1A0264F997200EAFD64 /* SelectBankTableViewCell.xib */,
+				3B321953264FB05200D04410 /* GenreTableViewCell.swift */,
+				3B321954264FB05200D04410 /* GenreTableViewCell.xib */,
+				3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */,
+				3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -242,16 +266,16 @@
 		3BFD9BBA2629B6DD00F587B4 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				3BFD9BBF2629B7F900F587B4 /* SelectChallengeViewController.swift */,
-				3BFD9BC02629B7F900F587B4 /* SelectChallengeViewController.xib */,
-				3BFD9BC3262AB83D00F587B4 /* AddChallengeViewController.swift */,
-				3BFD9BC4262AB83D00F587B4 /* AddChallengeViewController.xib */,
-				3BFD9BCB262B1DE300F587B4 /* DescribeChallengeViewController.swift */,
-				3BFD9BCC262B1DE300F587B4 /* DescribeChallengeViewController.xib */,
-				3BFD9BCF262D817E00F587B4 /* StartChallengeViewController.swift */,
-				3BFD9BD0262D817E00F587B4 /* StartChallengeViewController.xib */,
 				3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */,
 				3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */,
+				3BF0E18F264CF7EA00EAFD64 /* MakeChallengeVC.swift */,
+				3BF0E190264CF7EA00EAFD64 /* MakeChallengeVC.xib */,
+				3BF0E193264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift */,
+				3BF0E194264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib */,
+				3BF0E197264E5FE000EAFD64 /* SelectGenreVC.swift */,
+				3BF0E198264E5FE000EAFD64 /* SelectGenreVC.xib */,
+				3BF0E19B264F978000EAFD64 /* SelectBankVC.swift */,
+				3BF0E19C264F978000EAFD64 /* SelectBankVC.xib */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -326,20 +350,23 @@
 			files = (
 				3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */,
 				3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */,
+				3BF0E19E264F978000EAFD64 /* SelectBankVC.xib in Resources */,
 				3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */,
 				3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */,
 				3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */,
+				3BF0E192264CF7EA00EAFD64 /* MakeChallengeVC.xib in Resources */,
 				3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */,
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
 				3BFD9BA2261F01C100F587B4 /* FriendsViewController.xib in Resources */,
-				3BFD9BCE262B1DE300F587B4 /* DescribeChallengeViewController.xib in Resources */,
+				3BF0E196264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib in Resources */,
 				3BFD9BA6261F01E200F587B4 /* MyPageViewContoller.xib in Resources */,
-				3BFD9BC22629B7F900F587B4 /* SelectChallengeViewController.xib in Resources */,
-				3BFD9BD2262D817E00F587B4 /* StartChallengeViewController.xib in Resources */,
-				3BFD9BC6262AB83D00F587B4 /* AddChallengeViewController.xib in Resources */,
+				3BF0E19A264E5FE000EAFD64 /* SelectGenreVC.xib in Resources */,
 				3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */,
 				3B8F4D28260C929A00B7DA1F /* LaunchScreen.storyboard in Resources */,
+				3B321956264FB05200D04410 /* GenreTableViewCell.xib in Resources */,
 				3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */,
+				3BF0E1A2264F997200EAFD64 /* SelectBankTableViewCell.xib in Resources */,
+				3B32195A2652621D00D04410 /* CertificationCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,24 +420,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC7257B26199BAD00559D6C /* MainViewController.swift in Sources */,
-				3BFD9BD1262D817E00F587B4 /* StartChallengeViewController.swift in Sources */,
 				3BFD9BA9262171B000F587B4 /* CALayer+Border.swift in Sources */,
-				3BFD9BCD262B1DE300F587B4 /* DescribeChallengeViewController.swift in Sources */,
+				3B3219592652621D00D04410 /* CertificationCollectionViewCell.swift in Sources */,
+				3BF0E18A264CF00900EAFD64 /* UIImage+Size.swift in Sources */,
+				3BF0E1A1264F997200EAFD64 /* SelectBankTableViewCell.swift in Sources */,
+				3BF0E195264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift in Sources */,
+				3BF0E19D264F978000EAFD64 /* SelectBankVC.swift in Sources */,
+				3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
 				3BFD9BB32625B65600F587B4 /* ChallengeTableViewCell.swift in Sources */,
 				3BF5699E263EF4BF003B0EEA /* DetailChallengeViewController.swift in Sources */,
+				3BF0E191264CF7EA00EAFD64 /* MakeChallengeVC.swift in Sources */,
 				3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */,
+				3B32195C2653A56500D04410 /* CerificationModel.swift in Sources */,
 				3BFD9BA1261F01C100F587B4 /* FriendsViewController.swift in Sources */,
 				3BC725782616B67900559D6C /* SignUpModel.swift in Sources */,
 				3BFD9BB62626AE1400F587B4 /* ChallengeModel.swift in Sources */,
+				3B321955264FB05200D04410 /* GenreTableViewCell.swift in Sources */,
 				3BFD9BB92626CE6100F587B4 /* DBNetwork.swift in Sources */,
 				3BFD9BA5261F01E200F587B4 /* MyPageViewContoller.swift in Sources */,
-				3BFD9BC5262AB83D00F587B4 /* AddChallengeViewController.swift in Sources */,
 				3BC725762616B65D00559D6C /* UserModel.swift in Sources */,
 				3BFD9BAB2621720E00F587B4 /* UInt+Color.swift in Sources */,
-				3BFD9BC12629B7F900F587B4 /* SelectChallengeViewController.swift in Sources */,
 				3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */,
 				3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */,
 			);

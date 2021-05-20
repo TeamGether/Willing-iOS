@@ -8,6 +8,18 @@
 
 import Foundation
 
-struct UserInfo {
+struct UserInfo : Codable {
+    var email: String? = nil
+    var name: String? = nil
+    var pwd: String? = nil
+    var profile: String? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case email
+        case name
+        case pwd
+        case profile
+        
+    }
     
 }

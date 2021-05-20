@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     }
     
     func setBtnUI(btn: UIButton) {
-        btn.layer.backgroundColor = UInt(0xD9EBF0).cgColor
+        btn.layer.backgroundColor = UIColor(named: "PRIMARY BLUE")?.cgColor
         btn.layer.cornerRadius = 10
         
         btn.layer.shadowColor = UIColor.gray.cgColor
@@ -43,39 +43,36 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginBtnClicked(_ sender: Any) {
-        //        let email = emailTxtField.text
-        //        let pwd = pwdTxtField.text
+//        let email = emailTxtField.text
+//        let pwd = pwdTxtField.text
         let email: String? = "skycat0212@jejunu.ac.kr"
         let pwd: String? = "123456"
-        if email == "" || pwd == "" {
-            return
-        }
+        if email == "" || pwd == "" { return }
+        
         if let email = email, let pwd = pwd {
-            Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] authResult, error in
-                print("authResult : ", authResult)
-                print("error : ", error)
-                guard let strongSelf = self else { return }
-                // ...
-                let loginUser = Auth.auth().currentUser;
-                print("loginUser : ", loginUser)
-                if authResult == nil {
+            DBNetwork.login(email: email, pwd: pwd) {
+                resultCode in
+                switch resultCode {
+                case 1: // 사용자 정보 없음
                     let alertController = UIAlertController(title: "사용자 정보 없음", message: "가입되지 않은 계정이거나, 비밀번호가 틀렸습니다.", preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alertController.addAction(okButton)
-                    self?.present(alertController, animated: true, completion: nil)
-                } else if loginUser?.isEmailVerified == false {
+                    self.present(alertController, animated: true, completion: nil)
+                    break
+                case 2: // 이메일 인증 필요
                     let alertController = UIAlertController(title: "이메일 인증 필요", message: "이메일을 확인하여 메일 인증을 진행해주세요.", preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
                     alertController.addAction(okButton)
-                    self?.present(alertController, animated: true, completion: nil)
-                } else {
-                    user = loginUser
-                    self?.toMainView()
-                    
+                    self.present(alertController, animated: true, completion: nil)
+                    break
+                case 3: // 로그인 성공
+                    self.toMainView()
+                    break
+                default:
+                    break
                 }
             }
         }
-        
     }
     
     func toMainView() {
@@ -84,17 +81,16 @@ class LoginViewController: UIViewController {
         let mainVC = MainViewController()
         let mainNaviVC = UINavigationController(rootViewController: mainVC)
         
-        
         let rankingVC = RankingViewController()
         let feedVC = FeedViewController()
         let friendsVC = FriendsViewController()
         let myPageVC = MyPageViewContoller()
         
-        mainNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "chellenges"), tag: 0)
-        rankingVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ranking"), tag: 0)
-        feedVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "feed"), tag: 0)
-        friendsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "friends"), tag: 0)
-        myPageVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "my"), tag: 0)
+        mainNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "chellenges")?.resizeImage(targetSize: CGSize(width: 30, height: 25)), tag: 0)
+        rankingVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ranking")?.resizeImage(targetSize: CGSize(width: 30, height: 25)), tag: 0)
+        feedVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "feed")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
+        friendsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "friends")?.resizeImage(targetSize: CGSize(width: 30, height: 50)), tag: 0)
+        myPageVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "my")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
         
         tabBarController.viewControllers = [mainNaviVC, rankingVC, feedVC, friendsVC, myPageVC]
         
@@ -105,8 +101,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func SignUpBtnClicked(_ sender: Any) {
         let vc = SignUpViewController()
-        //        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
+    
 }
+

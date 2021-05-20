@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-//var checkedNick: String? = nil
-
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var nicknameTxtField: UITextField!
@@ -35,10 +33,6 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         setTxtFieldUI(txtField: nicknameTxtField)
         setTxtFieldUI(txtField: emailTxtField)
         setTxtFieldUI(txtField: pwdTxtField)
@@ -47,6 +41,11 @@ class SignUpViewController: UIViewController {
         
         setBtnUI(btn: signUpBtn)
         setBtnUI(btn: checkNickBtn)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
     }
     
     
@@ -109,7 +108,7 @@ class SignUpViewController: UIViewController {
         if userInfo.isValidDonateName(annotLabel: donateNameAnnotLabel) == false { isValid = false}
         
         if isValid {
-            userInfo.signUp(completion: {
+            DBNetwork.signUp(signUpUser: userInfo, completion: {
                 didSuccecs in
                 if didSuccecs == false {
                     let alertController = UIAlertController(title: "회원가입 실패", message: "회원가입이 실패되었습니다", preferredStyle: .alert)
@@ -143,7 +142,7 @@ class SignUpViewController: UIViewController {
     }
     
     func setBtnUI(btn: UIButton) {
-        btn.layer.backgroundColor = UInt(0xD9EBF0).cgColor
+        btn.layer.backgroundColor = UIColor(named: "PRIMARY BLUE")?.cgColor
         btn.layer.cornerRadius = 10
         
         btn.layer.shadowColor = UIColor.gray.cgColor

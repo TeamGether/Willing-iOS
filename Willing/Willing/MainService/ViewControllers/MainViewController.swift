@@ -45,14 +45,14 @@ class MainViewController: UIViewController {
     func getChallengeList() {
         let email = user!.email!
         let db = Firestore.firestore()
-        db.collection("Challenge").whereField("email", isEqualTo: email)
+        db.collection("Challenge").whereField("UID", isEqualTo: email)
             .getDocuments() { [self](querySnapshot, err) in
                 if err == nil {
                     var challengeList: Array<ChallengeSummaryUnit> = []
                     for document in querySnapshot!.documents {
                         let data = document.data()
                         print("chall sum data", data)
-                        let challengeUnit = ChallengeSummaryUnit(title: data["title"]! as! String, percent: data["percent"]! as! Int )
+                        let challengeUnit = ChallengeSummaryUnit(docuID: document.documentID, title: data["title"]! as! String, percent: data["percent"]! as! Int, subject: data["subject"]! as! String)
                         challengeList.append(challengeUnit)
                     }
                     self.challengeSummary = challengeList
@@ -87,22 +87,32 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
         if let challengeSummary = challengeSummary {
             if indexPath.row < challengeSummary.count {
                 cell.challengeTitleLabel.text = challengeSummary[indexPath.row].title
-                //                let a = 11
-                //                cell.challengeProgressPercent.text = String(a)
+                cell.challengeSubjectLabel.text = challengeSummary[indexPath.row].subject
+                switch challengeSummary[indexPath.row].subject {
+                case "건강":
+                    cell.challengeSubjectView.backgroundColor = UIColor(named: "OPPRTUNITY")
+                    break
+                case "공부":
+                    cell.challengeSubjectView.backgroundColor = UIColor(named: "POST")
+                    break
+                case "기타":
+                    cell.challengeSubjectView.backgroundColor = UIColor(named: "ACCOUNT")
+                    break
+                default:
+                    break
+                }
+                    
                 cell.challengeProgressPercent.text = String( challengeSummary[indexPath.row].percent)
                 cell.challengeProgressBar.progress = Float(challengeSummary[indexPath.row].percent) / 100
             } else if indexPath.row == challengeSummary.count {
                 cell.challengeTitleLabel.isHidden = true
                 cell.challengeProgressPercent.isHidden = true
                 cell.challengeProgressBar.isHidden = true
+                cell.challengeSubjectView.isHidden = true
                 cell.addChallengeView.isHidden = false
             }
         }
-        //        cell.challengeProgressPercent.text = challengeSummary?[indexPath.row].percent
-        
-        //        let selectedView = UIView()
-        //        selectedView.backgroundColor = .clear
-        //        cell.selectedBackgroundView = selectedView
+
         
         return cell
     }
@@ -111,11 +121,12 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource{
         switch indexPath.row {
         case challengeList.numberOfRows(inSection: 0) - 1:
             print("clicked")
-            let vc = SelectChallengeViewController()
+            let vc = MakeChallengeVC()
             self.navigationController?.pushViewController(vc, animated: true)
             break
         default:
             let vc = DetailChallengeViewController()
+            vc.docuID = challengeSummary![indexPath.row].docuID
             self.navigationController?.pushViewController(vc, animated: true)
             break
         }

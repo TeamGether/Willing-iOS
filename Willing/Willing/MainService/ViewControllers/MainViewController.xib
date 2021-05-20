@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +21,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYk-lJ-FUy">
                     <rect key="frame" x="20" y="124" width="374" height="718"/>
+                    <color key="backgroundColor" name="BG"/>
                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzO-Ex-9tC">
@@ -32,14 +34,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="BG"/>
                     <constraints>
                         <constraint firstItem="zFY-5q-tQ8" firstAttribute="leading" secondItem="dzO-Ex-9tC" secondAttribute="leading" id="Bei-3b-UN3"/>
                         <constraint firstItem="zFY-5q-tQ8" firstAttribute="centerY" secondItem="dzO-Ex-9tC" secondAttribute="centerY" id="b75-ng-Hs3"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" name="BG"/>
             <constraints>
                 <constraint firstItem="RYk-lJ-FUy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0gl-7R-vxe"/>
                 <constraint firstItem="dzO-Ex-9tC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3ya-HB-Bct"/>
@@ -54,4 +56,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="BG">
+            <color red="0.94117647058823528" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -10,69 +10,53 @@ import Foundation
 import Firebase
 
 struct ChallengeSummaryUnit {
+    let docuID: String
     let title: String
     let percent: Int
+    let subject: String
 }
 
 public struct Challenge: Codable {
-    var nickname = user?.email
-    var isgroup: Bool = false
-    var gid: String? = nil
     
-    var title: String? = nil
-    var reason: String? = nil
+    var UID: String = (user?.email)!
     var tobe: String? = nil
-    var friends: Array<String?> = []
+    var percent: Int = 0
+    var didFinish: Bool = false
+    var didSuccess: Bool = false
     
-    var money: Int? = nil
-    var startdate: String? = nil
-    var totalset: Int? = nil
-    var dayperset: Int? = nil
-    var numberperset: Int? = nil
-    var enddate: String? = ""
-    var detail: String? = nil
-    
-    var donation: String? = nil
-    
-    var alarm: Bool = true
-    var alarmday: Array<String>? = []
-    var alarmtime: String? = nil
-    
+    var subject: String? = nil
+    var title: String? = nil
+    var term: Int = 1
+    var cntPerWeek: Int = 1
+    var price: Int = 10000
+    var targetBank: String? = nil
+    var targetAccount: String? = nil
     var show: Bool = true
     
-    var success: Bool = false
-    var percentage: Int = 0
-    var finish: Bool = false
-    
     enum CodingKeys: String, CodingKey {
-        case nickname
-        case isgroup
-        case gid
-        case title
-        case reason
+        case UID
         case tobe
-        case friends
-        case money
-        case startdate
-        case totalset
-        case dayperset
-        case numberperset
-        case enddate
-        case detail
-        case donation
-        case alarm
-        case alarmday
-        case alarmtime
-        case show
-        case success
-        case percentage
-        case finish
+        case percent
+        case didFinish
+        case didSuccess
         
+        case subject
+        case title
+        case term
+        case cntPerWeek
+        case price
+        case targetBank
+        case targetAccount
+        case show
     }
     
-    func setEndDate() {
-        
+    func isValidChallenge() -> Bool {
+        if let _ = subject, let _ = title, let _ = targetBank, let _ = targetAccount {
+            return true
+        }
+        return false
     }
+
     
     
     
