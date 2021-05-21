@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  FriendsViewController.swift
 //  Willing
 //
-//  Created by Kim on 2021/03/29.
+//  Created by Kim on 2021/04/08.
 //  Copyright © 2021 Kim SuJin. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class FriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

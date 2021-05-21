@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectBankVC" customModule="Willing" customModuleProvider="target">
+            <connections>
+                <outlet property="bankListTableView" destination="CQy-fR-CeK" id="SyQ-Li-mCq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyp-il-65W">
+                    <rect key="frame" x="82" y="273" width="250" height="350"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpt-nr-Krs">
+                            <rect key="frame" x="0.0" y="0.0" width="250" height="61"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은행을 선택하세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2si-90-VMN">
+                                    <rect key="frame" x="0.0" y="20" width="250" height="21"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="OPPRTUNITY"/>
+                            <constraints>
+                                <constraint firstItem="2si-90-VMN" firstAttribute="leading" secondItem="gpt-nr-Krs" secondAttribute="leading" id="MMB-N5-NyY"/>
+                                <constraint firstItem="2si-90-VMN" firstAttribute="top" secondItem="gpt-nr-Krs" secondAttribute="top" constant="20" id="NGD-Mn-cH5"/>
+                                <constraint firstAttribute="bottom" secondItem="2si-90-VMN" secondAttribute="bottom" constant="20" id="PSv-1B-9Aj"/>
+                                <constraint firstAttribute="trailing" secondItem="2si-90-VMN" secondAttribute="trailing" id="qFU-np-vAf"/>
+                            </constraints>
+                        </view>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5K-fh-BKG">
+                            <rect key="frame" x="0.0" y="61" width="250" height="289"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQy-fR-CeK">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="289"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                </tableView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="CQy-fR-CeK" secondAttribute="trailing" id="7dr-VA-LOR"/>
+                                <constraint firstItem="CQy-fR-CeK" firstAttribute="centerY" secondItem="x5K-fh-BKG" secondAttribute="centerY" id="EFT-BE-lQg"/>
+                                <constraint firstItem="CQy-fR-CeK" firstAttribute="leading" secondItem="x5K-fh-BKG" secondAttribute="leading" id="ERT-D1-D78"/>
+                                <constraint firstItem="CQy-fR-CeK" firstAttribute="centerX" secondItem="x5K-fh-BKG" secondAttribute="centerX" id="KAu-kY-YVk"/>
+                                <constraint firstAttribute="bottom" secondItem="CQy-fR-CeK" secondAttribute="bottom" id="ONy-HS-YbI"/>
+                                <constraint firstItem="CQy-fR-CeK" firstAttribute="top" secondItem="x5K-fh-BKG" secondAttribute="top" id="XvU-NM-VfK"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="x5K-fh-BKG" firstAttribute="leading" secondItem="vyp-il-65W" secondAttribute="leading" id="0DM-k8-x41"/>
+                        <constraint firstAttribute="trailing" secondItem="gpt-nr-Krs" secondAttribute="trailing" id="8Uu-Az-Vd6"/>
+                        <constraint firstAttribute="height" constant="350" id="92p-GQ-DHG"/>
+                        <constraint firstAttribute="width" constant="250" id="9JC-2q-Y0O"/>
+                        <constraint firstItem="gpt-nr-Krs" firstAttribute="leading" secondItem="vyp-il-65W" secondAttribute="leading" id="ElG-kv-0IP"/>
+                        <constraint firstItem="x5K-fh-BKG" firstAttribute="top" secondItem="gpt-nr-Krs" secondAttribute="bottom" id="Kx3-Ko-VsC"/>
+                        <constraint firstItem="gpt-nr-Krs" firstAttribute="top" secondItem="vyp-il-65W" secondAttribute="top" id="V3h-GW-yXc"/>
+                        <constraint firstAttribute="bottom" secondItem="x5K-fh-BKG" secondAttribute="bottom" id="a4h-gF-LmK"/>
+                        <constraint firstAttribute="trailing" secondItem="x5K-fh-BKG" secondAttribute="trailing" id="kAW-aK-unT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vyp-il-65W" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Be9-VG-YoW"/>
+                <constraint firstItem="vyp-il-65W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ajf-qw-Lxt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="135"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="OPPRTUNITY">
+            <color red="0.99199998378753662" green="0.72200000286102295" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
