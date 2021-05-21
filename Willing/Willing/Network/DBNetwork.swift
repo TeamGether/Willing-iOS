@@ -132,31 +132,8 @@ struct DBNetwork {
             // Uh-oh, an error occurred!
           } else {
             // Data for "images/island.jpg" is returned
-            print("data", data)
             guard let image = UIImage(data: data!) else { return }
-            print("image", image)
             completion(image)
-          }
-        }
-            
-        
-    }
-    
-    static func getImage(url: String, signal: Int, completion: @escaping(UIImage, Int) -> Void) {
-        let storageRef = storage.reference()
-        // Create a reference to the file you want to download
-        let imgRef = storageRef.child(url)
-
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        imgRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-          if let error = error {
-            // Uh-oh, an error occurred!
-          } else {
-            // Data for "images/island.jpg" is returned
-            print("data", data)
-            guard let image = UIImage(data: data!) else { return }
-            print("image", image)
-            completion(image, signal)
           }
         }
             
@@ -168,13 +145,8 @@ struct DBNetwork {
         db.collection("Certification").whereField("challengeId", isEqualTo: challId).order(by: "timestamp", descending: true).getDocuments() {
             (querySnapshot, err) in
             var certiList: Array<Certification> = []
-            guard let querySnapshot = querySnapshot else {
-                print("dho")
-                return }
-            print(1111111111111111111)
-            print("cnt", querySnapshot.documents.count)
+            guard let querySnapshot = querySnapshot else { return }
             for document in querySnapshot.documents {
-                print("cert query docu", document.data())
                 let result = Result {
                     try document.data(as: Certification.self)
                 }
@@ -183,7 +155,6 @@ struct DBNetwork {
                     certiList.append(certData!)
                     break
                 case .failure(let err):
-                    print("get cert err", err)
                     break
                 }
             }

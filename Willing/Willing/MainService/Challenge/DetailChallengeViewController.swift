@@ -12,7 +12,6 @@ class DetailChallengeViewController: UIViewController {
     var docuID: String? = nil
     var challenge: Challenge? = nil {
         didSet {
-//            print("hey", challenge)
             titleLabel.text = challenge?.title
             priceLabel.text = "\((challenge?.price)!) 원"
             termLabel.text = "\((challenge?.term)!) 주간  \((challenge?.cntPerWeek)!) 번씩"
@@ -30,13 +29,6 @@ class DetailChallengeViewController: UIViewController {
     var userImg: UIImage? = nil {
         didSet {
             userImageView.image = userImg
-        }
-    }
-    var loadingCnt: Int = 0 {
-        didSet {
-            if loadingCnt == certListWithImg.count {
-                certificationCollectionView.reloadData()
-            }
         }
     }
     
@@ -92,61 +84,37 @@ class DetailChallengeViewController: UIViewController {
         }
     }
     
-    var certificationList: Array<Certification?> = []
-    var certListWithImg: Array<CertificationWithImg> = []
+    var certificationList: Array<Certification?> = [] {
+        didSet {
+            certificationCollectionView.reloadData()
+        }
+    }
     
     func getCertificationListByCID(challID: String) {
         DBNetwork.getCertifications(challId: challID) { certList in
             self.certificationList = certList
             print("certilist", certList)
-            //Set size
-            for i in self.certificationList {
-                self.certListWithImg.append(CertificationWithImg.init(certification: i, image: nil))
-            }
-//            for i in self.certListWithImg {
-//                var cnt = 0
-//                DBNetwork.getImage(url: i.certification!.Imgurl, signal: cnt) { image, signal in
-//                    print("signal",signal)
-//                    print("image", i.certification?.Imgurl)
-//                    self.certListWithImg[signal].image = image
-//                    self.loadingCnt += 1
-//                }
-//                cnt += 1
-//                print("heycnt", cnt)
-//            }
-            ////
-            for i in 0 ..< self.certListWithImg.count {
-                let cnt = i
-                DBNetwork.getImage(url: self.certListWithImg[cnt].certification!.Imgurl, signal: cnt) { image, signal in
-                    print("signal",signal)
-                    print("image", self.certListWithImg[cnt].certification?.Imgurl)
-                    self.certListWithImg[signal].image = image
-                    self.loadingCnt += 1
-                }
-                print("heycnt", cnt)
-            }
-            ////
         }
     }
-
 
 
 }
 
 extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return certListWithImg.count
-        
+        return certificationList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
-        cell.certifiationImageView.image = certListWithImg[indexPath.row].image
+        DBNetwork.getImage(url: certificationList[indexPath.row]!.Imgurl) {
+            image in
+            cell.certifiationImageView.image = image
+        }
         cell.layer.cornerRadius = 10
         
         print("hohoyodshfoshfeowi")
-        print(certListWithImg)
+        print(certificationList)
         return cell
     }
     
@@ -165,15 +133,9 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let edgeInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-//        return edgeInset
-//    }
-//
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(certListWithImg[indexPath.row])
+        print(certificationList[indexPath.row])
     }
     
 }
