@@ -9,22 +9,65 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
-
+    @IBOutlet weak var friendsTableView: UITableView!
+    var friendsList = [""] {
+        didSet {
+            friendsTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        friendsTableView.delegate = self
+        friendsTableView.dataSource = self
+        registCell()
+        
+        guard let email = user?.email else { return }
+        getFriendsList(email: email)
+    }
+    
+    func registCell() {
+        let nibName = UINib(nibName: "FriendsTableViewCell", bundle: nil)
+        friendsTableView.register(nibName, forCellReuseIdentifier: "FriendCell")
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getFriendsList(email: String) {
+        DBNetwork.getFriends(email: email) {
+            follows in
+            let follower : Set = Set(follows.follower)
+            let following : Set = Set(follows.following)
+            let friends: Array<String> = Array((follower.intersection(following)).sorted())
+            self.friendsList = friends
+        }
     }
-    */
 
 }
+
+extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = friendsTableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendsTableViewCell
+        let name = friendsList[indexPath.row]
+        cell.cheerView.layer.cornerRadius = 5
+        cell.userImgView.layer.cornerRadius = 20
+        
+        cell.nameLabel.text = name
+        DBNetwork.getUserByName(name: name) { userData in
+            print(userData)
+            cell.emailLabel.text = userData.email
+            DBNetwork.getImage(url: userData.profile!) { image in
+                cell.userImgView.image = image
+            }
+        }
+        
+        
+        return cell
+    }
+    
+    
+}
+

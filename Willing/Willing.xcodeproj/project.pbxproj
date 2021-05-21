@@ -12,6 +12,9 @@
 		3B3219592652621D00D04410 /* CertificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */; };
 		3B32195A2652621D00D04410 /* CertificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */; };
 		3B32195C2653A56500D04410 /* CerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195B2653A56500D04410 /* CerificationModel.swift */; };
+		3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195D2657A4F900D04410 /* FriendsModel.swift */; };
+		3B3219612657AD2A00D04410 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */; };
+		3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */; };
 		3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */; };
 		3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */; };
 		3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8F4D24260C929A00B7DA1F /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CertificationCollectionViewCell.xib; sourceTree = "<group>"; };
 		3B32195B2653A56500D04410 /* CerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CerificationModel.swift; sourceTree = "<group>"; };
+		3B32195D2657A4F900D04410 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
+		3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		3B8F4D18260C929700B7DA1F /* Willing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				3BC725752616B65D00559D6C /* UserModel.swift */,
 				3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */,
 				3B32195B2653A56500D04410 /* CerificationModel.swift */,
+				3B32195D2657A4F900D04410 /* FriendsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +258,8 @@
 				3B321954264FB05200D04410 /* GenreTableViewCell.xib */,
 				3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */,
 				3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */,
+				3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */,
+				3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -359,6 +368,7 @@
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
 				3BFD9BA2261F01C100F587B4 /* FriendsViewController.xib in Resources */,
 				3BF0E196264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib in Resources */,
+				3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */,
 				3BFD9BA6261F01E200F587B4 /* MyPageViewContoller.xib in Resources */,
 				3BF0E19A264E5FE000EAFD64 /* SelectGenreVC.xib in Resources */,
 				3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */,
@@ -422,12 +432,14 @@
 				3BC7257B26199BAD00559D6C /* MainViewController.swift in Sources */,
 				3BFD9BA9262171B000F587B4 /* CALayer+Border.swift in Sources */,
 				3B3219592652621D00D04410 /* CertificationCollectionViewCell.swift in Sources */,
+				3B3219612657AD2A00D04410 /* FriendsTableViewCell.swift in Sources */,
 				3BF0E18A264CF00900EAFD64 /* UIImage+Size.swift in Sources */,
 				3BF0E1A1264F997200EAFD64 /* SelectBankTableViewCell.swift in Sources */,
 				3BF0E195264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift in Sources */,
 				3BF0E19D264F978000EAFD64 /* SelectBankVC.swift in Sources */,
 				3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
+				3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
 				3BFD9BB32625B65600F587B4 /* ChallengeTableViewCell.swift in Sources */,

@@ -163,4 +163,45 @@ struct DBNetwork {
         
     }
     
+    static func getFriends(email: String, completion: @escaping(Friends) -> Void) {
+        db.collection("Follow").document(email).getDocument() {
+            (document, error) in
+            guard let document = document else { return }
+            
+            var friends = Friends.init()
+            let result = Result {
+                try document.data(as: Friends.self)
+            }
+            switch result {
+            case .success(let friendsData):
+                friends = friendsData!
+                break
+            case .failure(let err):
+                print(err)
+                break
+            }
+            completion(friends)
+        }
+    }
+    
+    static func getUserByName(name: String, completion: @escaping(UserInfo) -> Void) {
+        db.collection("User").whereField("name", isEqualTo: name).getDocuments() { (querySnapshot, err) in
+            var user: UserInfo = UserInfo.init()
+            guard (querySnapshot?.documents.count)! > 0 else { return }
+            let userDocu = querySnapshot!.documents[0]
+            let result = Result {
+                try userDocu.data(as: UserInfo.self)
+            }
+            switch result {
+            case .success(let userData):
+                user = userData!
+                break
+            case .failure(let err):
+                break
+            }
+            completion(user)
+            
+        }
+    }
+    
 }
