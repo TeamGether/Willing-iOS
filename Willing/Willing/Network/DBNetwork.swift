@@ -204,4 +204,31 @@ struct DBNetwork {
         }
     }
     
+    //////////
+    static func getFollowingFeeds(followingList: Array<String>, completion: @escaping(Array<Certification>) -> Void) {
+        db.collection("Certification").whereField("UID", in: followingList).order(by: "timestamp", descending: true ).getDocuments() { (querySnapshot, err) in
+            
+        }
+    }
+    
+    static func getRecentFeeds(completion: @escaping(Array<Certification>) -> Void) {
+        db.collection("Certification").order(by: "timestamp", descending: true).getDocuments() { (querySnapshot, err) in
+            var feedList: Array<Certification> = []
+            
+            for document in querySnapshot!.documents {
+                let result = Result {
+                    try document.data(as: Certification.self)
+                }
+                switch result {
+                case .success(let feedData):
+                    feedList.append(feedData!)
+                    break
+                case .failure(let err):
+                    break
+                }
+            }
+            completion(feedList)
+            
+        }
+    }
 }
