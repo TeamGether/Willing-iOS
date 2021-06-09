@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B05E8AB2663977B003F9E85 /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05E8A92663977B003F9E85 /* CertificationVC.swift */; };
+		3B05E8AC2663977B003F9E85 /* CertificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B05E8AA2663977B003F9E85 /* CertificationVC.xib */; };
+		3B05E8AE2663CD59003F9E85 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05E8AD2663CD59003F9E85 /* String+Date.swift */; };
 		3B321955264FB05200D04410 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B321953264FB05200D04410 /* GenreTableViewCell.swift */; };
 		3B321956264FB05200D04410 /* GenreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B321954264FB05200D04410 /* GenreTableViewCell.xib */; };
 		3B3219592652621D00D04410 /* CertificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */; };
@@ -15,13 +18,15 @@
 		3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195D2657A4F900D04410 /* FriendsModel.swift */; };
 		3B3219612657AD2A00D04410 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */; };
 		3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */; };
+		3B7F50B2267094B0005E4614 /* JudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */; };
+		3B7F50B3267094B0005E4614 /* JudgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */; };
 		3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */; };
 		3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */; };
 		3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8F4D24260C929A00B7DA1F /* Assets.xcassets */; };
 		3B8F4D28260C929A00B7DA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8F4D26260C929A00B7DA1F /* LaunchScreen.storyboard */; };
+		3BB78A80266226780085AE83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BB78A7F266226770085AE83 /* GoogleService-Info.plist */; };
 		3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC725692611660C00559D6C /* LoginViewController.swift */; };
 		3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7256A2611660C00559D6C /* LoginViewController.xib */; };
-		3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7256E2611BB2900559D6C /* GoogleService-Info.plist */; };
 		3BC7257226132BB900559D6C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7257026132BB900559D6C /* SignUpViewController.swift */; };
 		3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BC7257126132BB900559D6C /* SignUpViewController.xib */; };
 		3BC725762616B65D00559D6C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC725752616B65D00559D6C /* UserModel.swift */; };
@@ -41,8 +46,8 @@
 		3BF0E1A2264F997200EAFD64 /* SelectBankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0E1A0264F997200EAFD64 /* SelectBankTableViewCell.xib */; };
 		3BF5699E263EF4BF003B0EEA /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */; };
 		3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */; };
-		3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B97261F017C00F587B4 /* RankingViewController.swift */; };
-		3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9B98261F017C00F587B4 /* RankingViewController.xib */; };
+		3BFD9B99261F017C00F587B4 /* JudgeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B97261F017C00F587B4 /* JudgeVC.swift */; };
+		3BFD9B9A261F017C00F587B4 /* JudgeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9B98261F017C00F587B4 /* JudgeVC.xib */; };
 		3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B9B261F019800F587B4 /* FeedViewController.swift */; };
 		3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD9B9C261F019800F587B4 /* FeedViewController.xib */; };
 		3BFD9BA1261F01C100F587B4 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD9B9F261F01C100F587B4 /* FriendsViewController.swift */; };
@@ -59,6 +64,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B05E8A92663977B003F9E85 /* CertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
+		3B05E8AA2663977B003F9E85 /* CertificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CertificationVC.xib; sourceTree = "<group>"; };
+		3B05E8AD2663CD59003F9E85 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		3B321953264FB05200D04410 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
 		3B321954264FB05200D04410 /* GenreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreTableViewCell.xib; sourceTree = "<group>"; };
 		3B3219572652621D00D04410 /* CertificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -67,15 +75,17 @@
 		3B32195D2657A4F900D04410 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
 		3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeTableViewCell.swift; sourceTree = "<group>"; };
+		3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JudgeTableViewCell.xib; sourceTree = "<group>"; };
 		3B8F4D18260C929700B7DA1F /* Willing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B8F4D1D260C929700B7DA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B8F4D24260C929A00B7DA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B8F4D27260C929A00B7DA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B8F4D29260C929A00B7DA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BB78A7F266226770085AE83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BC725692611660C00559D6C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3BC7256A2611660C00559D6C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		3BC7256E2611BB2900559D6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BC7257026132BB900559D6C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3BC7257126132BB900559D6C /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		3BC725752616B65D00559D6C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -95,8 +105,8 @@
 		3BF0E1A0264F997200EAFD64 /* SelectBankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBankTableViewCell.xib; sourceTree = "<group>"; };
 		3BF5699C263EF4BF003B0EEA /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
 		3BF5699D263EF4BF003B0EEA /* DetailChallengeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailChallengeViewController.xib; sourceTree = "<group>"; };
-		3BFD9B97261F017C00F587B4 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
-		3BFD9B98261F017C00F587B4 /* RankingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingViewController.xib; sourceTree = "<group>"; };
+		3BFD9B97261F017C00F587B4 /* JudgeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeVC.swift; sourceTree = "<group>"; };
+		3BFD9B98261F017C00F587B4 /* JudgeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JudgeVC.xib; sourceTree = "<group>"; };
 		3BFD9B9B261F019800F587B4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		3BFD9B9C261F019800F587B4 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		3BFD9B9F261F01C100F587B4 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +175,7 @@
 				3B8F4D24260C929A00B7DA1F /* Assets.xcassets */,
 				3B8F4D26260C929A00B7DA1F /* LaunchScreen.storyboard */,
 				3B8F4D29260C929A00B7DA1F /* Info.plist */,
-				3BC7256E2611BB2900559D6C /* GoogleService-Info.plist */,
+				3BB78A7F266226770085AE83 /* GoogleService-Info.plist */,
 			);
 			path = Willing;
 			sourceTree = "<group>";
@@ -175,14 +185,16 @@
 			children = (
 				3BC7257926199BAD00559D6C /* MainViewController.swift */,
 				3BC7257A26199BAD00559D6C /* MainViewController.xib */,
-				3BFD9B97261F017C00F587B4 /* RankingViewController.swift */,
-				3BFD9B98261F017C00F587B4 /* RankingViewController.xib */,
+				3BFD9B97261F017C00F587B4 /* JudgeVC.swift */,
+				3BFD9B98261F017C00F587B4 /* JudgeVC.xib */,
 				3BFD9B9B261F019800F587B4 /* FeedViewController.swift */,
 				3BFD9B9C261F019800F587B4 /* FeedViewController.xib */,
 				3BFD9B9F261F01C100F587B4 /* FriendsViewController.swift */,
 				3BFD9BA0261F01C100F587B4 /* FriendsViewController.xib */,
 				3BFD9BA3261F01E200F587B4 /* MyPageViewContoller.swift */,
 				3BFD9BA4261F01E200F587B4 /* MyPageViewContoller.xib */,
+				3B05E8A92663977B003F9E85 /* CertificationVC.swift */,
+				3B05E8AA2663977B003F9E85 /* CertificationVC.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +216,7 @@
 				3BFD9BA8262171B000F587B4 /* CALayer+Border.swift */,
 				3BFD9BAA2621720E00F587B4 /* UInt+Color.swift */,
 				3BF0E189264CF00900EAFD64 /* UIImage+Size.swift */,
+				3B05E8AD2663CD59003F9E85 /* String+Date.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -260,6 +273,8 @@
 				3B3219582652621D00D04410 /* CertificationCollectionViewCell.xib */,
 				3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */,
 				3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */,
+				3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */,
+				3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -357,12 +372,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B05E8AC2663977B003F9E85 /* CertificationVC.xib in Resources */,
 				3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */,
 				3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */,
 				3BF0E19E264F978000EAFD64 /* SelectBankVC.xib in Resources */,
 				3BFD9BB42625B65600F587B4 /* ChallengeTableViewCell.xib in Resources */,
 				3BC7256C2611660C00559D6C /* LoginViewController.xib in Resources */,
-				3BFD9B9A261F017C00F587B4 /* RankingViewController.xib in Resources */,
+				3BFD9B9A261F017C00F587B4 /* JudgeVC.xib in Resources */,
+				3B7F50B3267094B0005E4614 /* JudgeTableViewCell.xib in Resources */,
 				3BF0E192264CF7EA00EAFD64 /* MakeChallengeVC.xib in Resources */,
 				3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */,
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
@@ -370,8 +387,8 @@
 				3BF0E196264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib in Resources */,
 				3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */,
 				3BFD9BA6261F01E200F587B4 /* MyPageViewContoller.xib in Resources */,
+				3BB78A80266226780085AE83 /* GoogleService-Info.plist in Resources */,
 				3BF0E19A264E5FE000EAFD64 /* SelectGenreVC.xib in Resources */,
-				3BC7256F2611BB2900559D6C /* GoogleService-Info.plist in Resources */,
 				3B8F4D28260C929A00B7DA1F /* LaunchScreen.storyboard in Resources */,
 				3B321956264FB05200D04410 /* GenreTableViewCell.xib in Resources */,
 				3B8F4D25260C929A00B7DA1F /* Assets.xcassets in Resources */,
@@ -439,6 +456,8 @@
 				3BF0E19D264F978000EAFD64 /* SelectBankVC.swift in Sources */,
 				3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
+				3B05E8AE2663CD59003F9E85 /* String+Date.swift in Sources */,
+				3B05E8AB2663977B003F9E85 /* CertificationVC.swift in Sources */,
 				3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
 				3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */,
@@ -456,7 +475,8 @@
 				3BC725762616B65D00559D6C /* UserModel.swift in Sources */,
 				3BFD9BAB2621720E00F587B4 /* UInt+Color.swift in Sources */,
 				3B8F4D1E260C929700B7DA1F /* SceneDelegate.swift in Sources */,
-				3BFD9B99261F017C00F587B4 /* RankingViewController.swift in Sources */,
+				3B7F50B2267094B0005E4614 /* JudgeTableViewCell.swift in Sources */,
+				3BFD9B99261F017C00F587B4 /* JudgeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,12 +614,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6XPJ277622;
 				INFOPLIST_FILE = Willing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KimSJ.Willing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KimSuJin.Willing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -612,12 +634,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6XPJ277622;
 				INFOPLIST_FILE = Willing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.KimSJ.Willing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KimSuJin.Willing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

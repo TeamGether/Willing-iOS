@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import FirebaseUI
 
 class DetailChallengeViewController: UIViewController {
+    var isMine: Bool = false {
+        didSet {
+            setByMine()
+            certificationCollectionView.reloadData()
+        }
+    }
     var docuID: String? = nil
     var challenge: Challenge? = nil {
         didSet {
@@ -17,13 +24,18 @@ class DetailChallengeViewController: UIViewController {
             termLabel.text = "\((challenge?.term)!) 주간  \((challenge?.cntPerWeek)!) 번씩"
             accountLabel.text = "\((challenge?.targetBank)!) \((challenge?.targetAccount)!)"
             
-            getUserInfoByEmail(email: challenge!.UID)
+            getUserInfoByEmail(email: challenge!.uid)
+            
+            if (challenge?.uid != user?.email) {
+                isMine = false
+            } else { isMine = true }
         }
     }
     var userInfo: UserInfo? = nil {
         didSet {
             userNameLabel.text = userInfo?.name
-            getUserImgByUrl(url: (userInfo?.profile)!)
+            guard (userInfo?.profileImg) != nil else { return }
+            getUserImgByUrl(url: (userInfo?.profileImg)!)
         }
     }
     var userImg: UIImage? = nil {
@@ -43,6 +55,9 @@ class DetailChallengeViewController: UIViewController {
     @IBOutlet weak var forkBtn: UIButton!
     @IBOutlet weak var forkView: UIView!
     
+    @IBOutlet weak var accountTitleLabel: UILabel!
+    @IBOutlet weak var userView: UIView!
+    
     @IBOutlet weak var certificationCollectionView: UICollectionView!
 
     
@@ -53,13 +68,33 @@ class DetailChallengeViewController: UIViewController {
         self.certificationCollectionView.dataSource = self
         
         registCell()
-        self.navigationController?.navigationBar.isHidden = false
         
         getChallengeInfoByCID(challID: docuID!)
         getCertificationListByCID(challID: docuID!)
         
         userImageView.layer.cornerRadius = 30
         forkView.layer.cornerRadius = 5
+        setByMine()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
+
+    }
+    
+    func setByMine() {
+        if isMine {
+            userView.isHidden = true
+            forkView.isHidden = true
+            accountTitleLabel.isHidden = false
+            accountLabel.isHidden = false
+        } else {
+            userView.isHidden = false
+            forkView.isHidden = false
+            accountTitleLabel.isHidden = true
+            accountLabel.isHidden = true
+        }
     }
     
     func registCell() {
@@ -84,7 +119,7 @@ class DetailChallengeViewController: UIViewController {
         }
     }
     
-    var certificationList: Array<Certification?> = [] {
+    var certificationList: Array<CertDocu?> = [] {
         didSet {
             certificationCollectionView.reloadData()
         }
@@ -96,24 +131,55 @@ class DetailChallengeViewController: UIViewController {
             print("certilist", certList)
         }
     }
-
+    
+    @IBAction func profileImgBtnClicked(_ sender: Any) {
+        guard let userEmail = userInfo?.email else { return }
+        let vc = MyPageViewContoller()
+        vc.userEmail = userEmail
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
 extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if isMine {
+            return certificationList.count + 1
+        }
         return certificationList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
-        DBNetwork.getImage(url: certificationList[indexPath.row]!.Imgurl) {
-            image in
-            cell.certifiationImageView.image = image
+        if isMine {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
+            if indexPath.row == 0 {
+                cell.certifiationImageView.isHidden = true
+                cell.addImgView.isHidden = false
+                cell.layer.cornerRadius = 10
+                return cell
+            } else {
+                let storage = Storage.storage()
+                let storageRef = storage.reference()
+                let reference = storageRef.child(certificationList[indexPath.row-1]!.certtification.imgUrl)
+
+                cell.certifiationImageView.sd_setImage(with: reference)
+                
+                cell.layer.cornerRadius = 10
+                                print(certificationList)
+                return cell
+            }
         }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let reference = storageRef.child(certificationList[indexPath.row]!.certtification.imgUrl)
+
+        cell.certifiationImageView.sd_setImage(with: reference)
+
         cell.layer.cornerRadius = 10
         
-        print("hohoyodshfoshfeowi")
         print(certificationList)
         return cell
     }
@@ -135,7 +201,25 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(certificationList[indexPath.row])
+        if isMine {
+            switch indexPath.row {
+            case 0:
+                print("add cert")
+                break
+            default: //indexPath.row-1 로 접근해야함.
+                print(certificationList[indexPath.row-1])
+                print(isMine)
+                let cert = certificationList[indexPath.row-1]
+                let vc = CertificationVC.init(cert!.docuID)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            print(certificationList[indexPath.row])
+            print(isMine)
+            let cert = certificationList[indexPath.row]
+            let vc = CertificationVC.init(cert!.docuID)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

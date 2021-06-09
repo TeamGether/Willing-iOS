@@ -9,15 +9,22 @@
 import Foundation
 import UIKit
 
-struct Certification : Codable {
-    var Imgurl: String = ""
+struct CertDocu {
+    let docuID: String
+    let certtification: Certification
+}
+
+struct Certification: Codable {
+    var userName: String = ""
+    var imgUrl: String = ""
     var challengeId: String = ""
     var cheering: Array<String> = []
     var question: Array<String> = []
-    var timestamp: String = ""
+    var timestamp: Int = 0
     
     enum CodingKeys: String, CodingKey {
-        case Imgurl
+        case userName
+        case imgUrl
         case challengeId
         case cheering
         case question

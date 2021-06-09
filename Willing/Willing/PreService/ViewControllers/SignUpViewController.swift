@@ -15,13 +15,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var pwdTxtField: UITextField!
     @IBOutlet weak var pwdCheckTxtField: UITextField!
-    @IBOutlet weak var donateNameTxtField: UITextField!
     
     @IBOutlet weak var nickAnnotLabel: UILabel!
     @IBOutlet weak var emailAnnotLabel: UILabel!
     @IBOutlet weak var pwdAnnotLabel: UILabel!
     @IBOutlet weak var pwdCheckAnnotLabel: UILabel!
-    @IBOutlet weak var donateNameAnnotLabel: UILabel!
     
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var checkNickBtn: UIButton!
@@ -37,7 +35,6 @@ class SignUpViewController: UIViewController {
         setTxtFieldUI(txtField: emailTxtField)
         setTxtFieldUI(txtField: pwdTxtField)
         setTxtFieldUI(txtField: pwdCheckTxtField)
-        setTxtFieldUI(txtField: donateNameTxtField)
         
         setBtnUI(btn: signUpBtn)
         setBtnUI(btn: checkNickBtn)
@@ -60,7 +57,7 @@ class SignUpViewController: UIViewController {
      */
     @IBAction func nickCheckBtnClicked(_ sender: Any) {
         let nickname = nicknameTxtField.text
-        let userInfo = SignUpUser(name: nickname, email: nil, pwd: nil, pwdCheck: nil, donateName: nil)
+        let userInfo = SignUpUser(name: nickname, email: nil, pwd: nil, pwdCheck: nil)
         var annotStr = ""
         var isValid = false
         
@@ -90,11 +87,10 @@ class SignUpViewController: UIViewController {
         let email = emailTxtField.text
         let pwd = pwdTxtField.text
         let pwdcheck = pwdCheckTxtField.text
-        let donateName = donateNameTxtField.text
         
         var isValid = true
         
-        let userInfo = SignUpUser(name: nickname, email: email, pwd: pwd, pwdCheck: pwdcheck, donateName: donateName)
+        let userInfo = SignUpUser(name: nickname, email: email, pwd: pwd, pwdCheck: pwdcheck)
         
         if checkedNick != nickname || checkedNick == "" {
             isValid = false
@@ -105,7 +101,7 @@ class SignUpViewController: UIViewController {
         if userInfo.isValidEmail(annotLabel: emailAnnotLabel) == false { isValid = false }
         if userInfo.isValidPwd(annotLabel: pwdAnnotLabel) == false { isValid = false}
         if userInfo.isValidPwdCheck(annotLabel: pwdCheckAnnotLabel) == false { isValid = false}
-        if userInfo.isValidDonateName(annotLabel: donateNameAnnotLabel) == false { isValid = false}
+
         
         if isValid {
             DBNetwork.signUp(signUpUser: userInfo, completion: {

@@ -14,30 +14,10 @@ struct SignUpUser {
     let email: String?
     let pwd: String?
     let pwdCheck: String?
-    let donateName: String?
     
     func existSameName(completion: @escaping (Bool, String) -> Void) {
         let name = self.name!
         DBNetwork.checkSameData(collectionName: "User", field: "name", targetValue: name, completion: completion)
-    }
-    
-    func isValidDonateName(annotLabel: UILabel) -> Bool {
-        var isValid = false
-        var annotStr = ""
-        
-        if existAvailableStrValue(value: donateName){
-            isValid = true
-        } else {
-            annotStr = "기부명을 입력하세요"
-        }
-        
-        if isValid == false {
-            annotLabel.text = annotStr
-            annotLabel.textColor = UIColor.systemRed
-            annotLabel.isHidden = false
-        } else { annotLabel.isHidden = true }
-        
-        return isValid
     }
     
     

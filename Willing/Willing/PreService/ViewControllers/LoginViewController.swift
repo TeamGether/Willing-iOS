@@ -81,18 +81,25 @@ class LoginViewController: UIViewController {
         let mainVC = MainViewController()
         let mainNaviVC = UINavigationController(rootViewController: mainVC)
         
-        let rankingVC = RankingViewController()
+        let rankingVC = JudgeVC()
+        let rankingNaviVC = UINavigationController(rootViewController: rankingVC)
+        
         let feedVC = FeedViewController()
+        let feedNaviVC = UINavigationController(rootViewController: feedVC)
+        
         let friendsVC = FriendsViewController()
+        let friendsNaviVC = UINavigationController(rootViewController: friendsVC)
+        
         let myPageVC = MyPageViewContoller()
-        
+        let myPageNaviVC = UINavigationController(rootViewController: myPageVC)
+
         mainNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "chellenges")?.resizeImage(targetSize: CGSize(width: 30, height: 25)), tag: 0)
-        rankingVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ranking")?.resizeImage(targetSize: CGSize(width: 30, height: 25)), tag: 0)
-        feedVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "feed")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
-        friendsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "friends")?.resizeImage(targetSize: CGSize(width: 30, height: 50)), tag: 0)
-        myPageVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "my")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
+        rankingNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ranking")?.resizeImage(targetSize: CGSize(width: 30, height: 25)), tag: 0)
+        feedNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "feed")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
+        friendsNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "friends")?.resizeImage(targetSize: CGSize(width: 30, height: 50)), tag: 0)
+        myPageNaviVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "my")?.resizeImage(targetSize: CGSize(width: 25, height: 25)), tag: 0)
         
-        tabBarController.viewControllers = [mainNaviVC, rankingVC, feedVC, friendsVC, myPageVC]
+        tabBarController.viewControllers = [mainNaviVC, rankingNaviVC, feedNaviVC, friendsNaviVC, myPageNaviVC]
         
         tabBarController.modalPresentationStyle = .fullScreen
         self.present(tabBarController, animated: true, completion: nil)

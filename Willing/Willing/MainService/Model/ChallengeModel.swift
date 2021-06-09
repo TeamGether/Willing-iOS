@@ -18,7 +18,7 @@ struct ChallengeSummaryUnit {
 
 public struct Challenge: Codable {
     
-    var UID: String = (user?.email)!
+    var uid: String = (user?.email)!
     var tobe: String? = nil
     var percent: Int = 0
     var didFinish: Bool = false
@@ -34,7 +34,7 @@ public struct Challenge: Codable {
     var show: Bool = true
     
     enum CodingKeys: String, CodingKey {
-        case UID
+        case uid
         case tobe
         case percent
         case didFinish

@@ -40,12 +40,14 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     func getChallengeList() {
         let email = user!.email!
         let db = Firestore.firestore()
-        db.collection("Challenge").whereField("UID", isEqualTo: email)
+        db.collection("Challenge").whereField("uid", isEqualTo: email)
             .getDocuments() { [self](querySnapshot, err) in
                 if err == nil {
                     var challengeList: Array<ChallengeSummaryUnit> = []

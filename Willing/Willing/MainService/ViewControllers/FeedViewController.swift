@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import FirebaseUI
 
 class FeedViewController: UIViewController {
     @IBOutlet weak var followBtn: UIButton!
@@ -27,7 +29,7 @@ class FeedViewController: UIViewController {
             setFeedList()
         }
     }
-    var feedList: Array<Certification> = [] {
+    var feedList: Array<CertDocu> = [] {
         didSet {
             feedCollectionView.reloadData()
         }
@@ -40,6 +42,12 @@ class FeedViewController: UIViewController {
         feedCollectionView.dataSource = self
         registCell()
         setTab()
+        setFeedList()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func registCell() {
@@ -66,19 +74,21 @@ class FeedViewController: UIViewController {
     func setFeedList() {
         switch mode {
         case .follow:
-//            var followingNameList: Array<String> = []
-//            DBNetwork.getFriends(email: (user?.email)!) {
-//                follows in
-//                followingNameList = follows.following
-//
-//
-//            }
-            feedList = []
+            var followingNameList: Array<String> = []
+            DBNetwork.getFriends(email: (user?.email)!) {
+                follows in
+                followingNameList = follows.following
+                DBNetwork.getFollowingFeeds(followingList: followingNameList) {
+                    feedList in
+                    self.feedList = feedList
+                }
+            }
             break
         case .recent:
             DBNetwork.getRecentFeeds() {
                 feedList in
                 self.feedList = feedList
+                print(feedList)
             }
             break
         }
@@ -102,9 +112,12 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
         cell.layer.cornerRadius = 10
-        DBNetwork.getImage(url: feedList[indexPath.row].Imgurl) { image in
-            cell.certifiationImageView.image = image
-        }
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let reference = storageRef.child(feedList[indexPath.row].certtification.imgUrl)
+
+        cell.certifiationImageView.sd_setImage(with: reference)
         
         return cell
     }
@@ -128,6 +141,11 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(feedCollectionView.cellForItem(at: indexPath))
         print(feedList[indexPath.row])
+        
+        let cert = feedList[indexPath.row]
+        let vc = CertificationVC.init(cert.docuID)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

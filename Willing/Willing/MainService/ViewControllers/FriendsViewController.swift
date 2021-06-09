@@ -27,6 +27,11 @@ class FriendsViewController: UIViewController {
         getFriendsList(email: email)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func registCell() {
         let nibName = UINib(nibName: "FriendsTableViewCell", bundle: nil)
         friendsTableView.register(nibName, forCellReuseIdentifier: "FriendCell")
@@ -59,7 +64,8 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         DBNetwork.getUserByName(name: name) { userData in
             print(userData)
             cell.emailLabel.text = userData.email
-            DBNetwork.getImage(url: userData.profile!) { image in
+            guard userData.profileImg != nil else { return }
+            DBNetwork.getImage(url: userData.profileImg!) { image in
                 cell.userImgView.image = image
             }
         }
@@ -68,6 +74,15 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MyPageViewContoller()
+        
+        guard let email = (friendsTableView.cellForRow(at: indexPath) as! FriendsTableViewCell).emailLabel.text else { return }
+        vc.userEmail = email
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
 }
 

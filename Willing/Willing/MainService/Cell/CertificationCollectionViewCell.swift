@@ -10,6 +10,7 @@ import UIKit
 
 class CertificationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var certifiationImageView: UIImageView!
+    @IBOutlet weak var addImgView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

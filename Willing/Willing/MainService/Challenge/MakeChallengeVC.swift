@@ -94,9 +94,6 @@ class MakeChallengeVC: UIViewController {
         let nextBtn = UIBarButtonItem(title: "시작하기", style: .plain, target: self, action: #selector(addTapped))
         self.navigationItem.setRightBarButton(nextBtn, animated: true)
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
     }
     
     @objc func addTapped() {

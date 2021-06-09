@@ -17,5 +17,6 @@ target 'Willing' do
   pod 'FirebaseFirestoreSwift', '~> 7.0-beta'
   pod 'DLRadioButton', '~> 1.4'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
 
 end

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,27 +21,41 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wings" translatesAutoresizingMaskIntoConstraints="NO" id="bE6-do-1yZ">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" name="WHITE"/>
+                    </imageView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fwh-Xy-uhc">
+                        <rect key="frame" x="15" y="17" width="20" height="16"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" name="WHITE"/>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
             <constraints>
+                <constraint firstItem="Fwh-Xy-uhc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="1Xc-bk-9Vn"/>
                 <constraint firstItem="bE6-do-1yZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="48q-Ww-pOD"/>
                 <constraint firstAttribute="bottom" secondItem="bE6-do-1yZ" secondAttribute="bottom" id="Lna-cG-cck"/>
+                <constraint firstAttribute="bottom" secondItem="Fwh-Xy-uhc" secondAttribute="bottom" constant="15" id="PDo-6M-ZIL"/>
+                <constraint firstItem="Fwh-Xy-uhc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="UxX-zW-N05"/>
                 <constraint firstAttribute="trailing" secondItem="bE6-do-1yZ" secondAttribute="trailing" id="i00-5c-qLw"/>
                 <constraint firstItem="bE6-do-1yZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="x3g-54-kBC"/>
+                <constraint firstAttribute="trailing" secondItem="Fwh-Xy-uhc" secondAttribute="trailing" constant="15" id="za7-Ik-94j"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="addImgView" destination="Fwh-Xy-uhc" id="R0a-zw-PWU"/>
                 <outlet property="certifiationImageView" destination="bE6-do-1yZ" id="4J7-vD-2VT"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="wings" width="153" height="153"/>
         <namedColor name="WHITE">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

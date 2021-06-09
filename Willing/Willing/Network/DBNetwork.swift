@@ -53,10 +53,10 @@ struct DBNetwork {
                 if error != nil { // 에러발생
                     completion(false)
                 } else {
-                    if let name = signUpUser.name, let donateName = signUpUser.donateName {
+                    if let name = signUpUser.name {
                         db.collection("User").document().setData([
-                            "name": name, "email": email, "donateName": donateName,
-                            "tobe": "", "profile": ""
+                            "name": name, "email": email,
+                            "tobe": "", "profileImg": "profile/default_profile.jpeg"
                         ]) { err in
                             if let _ = err {
                                 completion(false)
@@ -125,11 +125,14 @@ struct DBNetwork {
         let storageRef = storage.reference()
         // Create a reference to the file you want to download
         let imgRef = storageRef.child(url)
+        
+        print("oh - url: ", url)
 
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
         imgRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
           if let error = error {
             // Uh-oh, an error occurred!
+            print("error", url, error)
           } else {
             // Data for "images/island.jpg" is returned
             guard let image = UIImage(data: data!) else { return }
@@ -140,11 +143,11 @@ struct DBNetwork {
         
     }
     
-    static func getCertifications(challId: String, completion: @escaping(Array<Certification>) -> Void) {
+    static func getCertifications(challId: String, completion: @escaping(Array<CertDocu>) -> Void) {
         
         db.collection("Certification").whereField("challengeId", isEqualTo: challId).order(by: "timestamp", descending: true).getDocuments() {
             (querySnapshot, err) in
-            var certiList: Array<Certification> = []
+            var certiList: Array<CertDocu> = []
             guard let querySnapshot = querySnapshot else { return }
             for document in querySnapshot.documents {
                 let result = Result {
@@ -152,7 +155,8 @@ struct DBNetwork {
                 }
                 switch result {
                 case .success(let certData):
-                    certiList.append(certData!)
+                    let certDocu = CertDocu(docuID: document.documentID, certtification: certData!)
+                    certiList.append(certDocu)
                     break
                 case .failure(let err):
                     break
@@ -205,23 +209,42 @@ struct DBNetwork {
     }
     
     //////////
-    static func getFollowingFeeds(followingList: Array<String>, completion: @escaping(Array<Certification>) -> Void) {
-        db.collection("Certification").whereField("UID", in: followingList).order(by: "timestamp", descending: true ).getDocuments() { (querySnapshot, err) in
-            
-        }
-    }
-    
-    static func getRecentFeeds(completion: @escaping(Array<Certification>) -> Void) {
-        db.collection("Certification").order(by: "timestamp", descending: true).getDocuments() { (querySnapshot, err) in
-            var feedList: Array<Certification> = []
-            
+    static func getFollowingFeeds(followingList: Array<String>, completion: @escaping(Array<CertDocu>) -> Void) {
+        db.collection("Certification").whereField("userName", in: followingList).order(by: "timestamp", descending: true ).getDocuments() { (querySnapshot, err) in
+            var feedList: Array<CertDocu> = []
+
+            print(err)
+            print(followingList)
             for document in querySnapshot!.documents {
                 let result = Result {
                     try document.data(as: Certification.self)
                 }
                 switch result {
                 case .success(let feedData):
-                    feedList.append(feedData!)
+                    let certDocu = CertDocu(docuID: document.documentID, certtification: feedData!)
+                    feedList.append(certDocu)
+                    break
+                case .failure(let err):
+                    break
+                }
+            }
+            completion(feedList)
+        }
+    }
+    
+    static func getRecentFeeds(completion: @escaping(Array<CertDocu>) -> Void) {
+        db.collection("Certification").order(by: "timestamp", descending: true).getDocuments() { (querySnapshot, err) in
+            var feedList: Array<CertDocu> = []
+            
+            for document in querySnapshot!.documents {
+                print(document.data())
+                let result = Result {
+                    try document.data(as: Certification.self)
+                }
+                switch result {
+                case .success(let feedData):
+                    let certDocu = CertDocu(docuID: document.documentID, certtification: feedData!)
+                    feedList.append(certDocu)
                     break
                 case .failure(let err):
                     break
@@ -231,4 +254,29 @@ struct DBNetwork {
             
         }
     }
+    
+    static func getCertificationById(docuId: String, completion: @escaping(Certification) -> Void) {
+        
+        let docRef = db.collection("Certification").document(docuId)
+        
+        docRef.getDocument { (document, error) in
+            var cert: Certification = Certification.init()
+            let result = Result {
+                try document?.data(as: Certification.self)
+            }
+            switch result {
+            case .success(let certData):
+                cert = certData!
+                break
+            case .failure(let err):
+                print(err)
+                break
+            }
+            completion(cert)
+        }
+        
+    }
+    
+    
+    
 }
