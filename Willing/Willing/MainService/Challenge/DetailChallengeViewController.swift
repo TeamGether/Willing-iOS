@@ -81,6 +81,7 @@ class DetailChallengeViewController: UIViewController {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
 
+        certificationCollectionView.reloadData()
     }
     
     func setByMine() {
@@ -128,7 +129,7 @@ class DetailChallengeViewController: UIViewController {
     func getCertificationListByCID(challID: String) {
         DBNetwork.getCertifications(challId: challID) { certList in
             self.certificationList = certList
-            print("certilist", certList)
+//            print("certilist", certList)
         }
     }
     
@@ -151,13 +152,17 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isMine {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
+            let cell = certificationCollectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
             if indexPath.row == 0 {
                 cell.certifiationImageView.isHidden = true
                 cell.addImgView.isHidden = false
                 cell.layer.cornerRadius = 10
                 return cell
             } else {
+                cell.addImgView.isHidden = true
+                cell.certifiationImageView.isHidden = false
+
+                
                 let storage = Storage.storage()
                 let storageRef = storage.reference()
                 let reference = storageRef.child(certificationList[indexPath.row-1]!.certtification.imgUrl)
@@ -165,12 +170,12 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
                 cell.certifiationImageView.sd_setImage(with: reference)
                 
                 cell.layer.cornerRadius = 10
-                                print(certificationList)
+//                                print(certificationList)
                 return cell
             }
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
+        let cell = certificationCollectionView.dequeueReusableCell(withReuseIdentifier: "CertificationCell", for: indexPath) as! CertificationCollectionViewCell
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -180,7 +185,7 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
 
         cell.layer.cornerRadius = 10
         
-        print(certificationList)
+//        print(certificationList)
         return cell
     }
     
@@ -204,17 +209,18 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
         if isMine {
             switch indexPath.row {
             case 0:
-                print("add cert")
+//                print("add cert")
+                addCert()
                 break
             default: //indexPath.row-1 로 접근해야함.
-                print(certificationList[indexPath.row-1])
+//                print(certificationList[indexPath.row-1])
                 print(isMine)
                 let cert = certificationList[indexPath.row-1]
                 let vc = CertificationVC.init(cert!.docuID)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         } else {
-            print(certificationList[indexPath.row])
+//            print(certificationList[indexPath.row])
             print(isMine)
             let cert = certificationList[indexPath.row]
             let vc = CertificationVC.init(cert!.docuID)
@@ -222,4 +228,138 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
         }
     }
     
+    func addCert() {
+        let vc = UIAlertController(title: "인증방식을 선택하세요", message: nil, preferredStyle: .actionSheet)
+        
+        var cancelAction: UIAlertAction
+        cancelAction = UIAlertAction(title: "취소", style: .cancel) {
+            (action: UIAlertAction) in
+            self.cancel()
+        }
+        
+        var albumAction: UIAlertAction
+        albumAction = UIAlertAction(title: "앨범", style: .default) {
+            (action: UIAlertAction) in
+            self.useAlbum()
+        }
+        
+        var cameraAction: UIAlertAction
+        cameraAction = UIAlertAction(title: "카메라", style: .default) {
+            (action: UIAlertAction) in
+            self.useCamera()
+        }
+        
+        var pedometerAction: UIAlertAction
+        pedometerAction = UIAlertAction(title: "만보기", style: .default) {
+            (action: UIAlertAction) in
+            self.usePedometer()
+        }
+        
+        var timerAction: UIAlertAction
+        timerAction = UIAlertAction(title: "타이머", style: .default) {
+            (action: UIAlertAction) in
+            self.useTimer()
+        }
+        vc.addAction(cancelAction)
+        vc.addAction(albumAction)
+        vc.addAction(cameraAction)
+        
+        vc.addAction(pedometerAction)
+        vc.addAction(timerAction)
+        
+//        if challenge?.subject == "건강" {
+//            vc.addAction(pedometerAction)
+//        } else if challenge?.subject == "공부" {
+//            vc.addAction(timerAction)
+//        }
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
+    func cancel() {
+        
+    }
+    
+    func useAlbum() {
+        var selectedImage: UIImageView
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: {
+            () in
+        })
+        
+    }
+    
+    func useCamera() {
+        var selectedImage: UIImageView
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        imagePickerController.sourceType = .camera
+        self.present(imagePickerController, animated: true, completion: {
+            () in
+        })
+    }
+        
+    func usePedometer() {
+        
+    }
+    
+    func useTimer() {
+        
+    }
+    
+}
+
+extension DetailChallengeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        dismiss(animated: true, completion: {
+            
+            // send image
+            var cert = Certification()
+            guard let challengeId = self.docuID else { return }
+            guard let userName = self.userInfo?.name else { return }
+            
+            cert.challengeId = challengeId
+            cert.userName = userName
+            
+            let now=NSDate()
+            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.dateFormat = "yyyyMMddHHmm"
+            dateFormatter.locale = NSLocale(localeIdentifier: "ko_KR") as Locale
+            let time = dateFormatter.string(from: now as Date)
+            guard let timeAsInt = Int(time) else { return }
+            
+            cert.timestamp = timeAsInt
+            
+            
+            DBNetwork.enrollCertification(cert: cert, certImage: image, completion: {
+                let vc = UIAlertController(title: "게시글이 등록되었습니다.", message: nil, preferredStyle: .alert)
+                let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
+                vc.addAction(okButton)
+                self.present(vc, animated: true, completion: {
+                    self.navigationController?.popViewController(animated: true)
+//                    self.certificationList = []
+                    self.getCertificationListByCID(challID: challengeId)
+//                    self.viewDidLoad()
+//                    self.certificationCollectionView.reloadData()
+                    DBNetwork.updateChallengeProgressingInfo(challId: challengeId)
+                    
+                })
+            })
+            
+            
+        })
+        
+    }
+    
+
 }

@@ -277,6 +277,65 @@ struct DBNetwork {
         
     }
     
+    static func enrollCertification(cert: Certification, certImage: UIImage, completion: @escaping() -> Void) {
+        
+        var data = Data()
+        data = certImage.jpegData(compressionQuality: 0.8)!
+        
+        let filename = cert.userName + String(cert.timestamp) + ".jpg"
+        
+        let filePath = "certification/" + filename
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        // send image
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                print("성공")
+                // enroll cert
+                do {
+                    var cert = cert
+                    cert.imgUrl = filePath
+                    let ref = try db.collection("Certification").addDocument(from: cert)
+                    completion()
+                } catch let error {
+                    print("Regist Challenge Error" ,error)
+                }
+            }
+        }
+    }
+    
+    static func updateChallengeProgressingInfo(challId: String){
+        getChallegneByDocuID(docuId: challId, completion: {
+            challenge in
+            
+            var challenge = challenge
+            getCertifications(challId: challId) { certList in
+                let successCnt = certList.count
+                challenge.percent = (successCnt * 100 / (challenge.cntPerWeek * challenge.term))
+                
+                if challenge.percent == 100 {
+                    challenge.didSuccess = true
+                    challenge.didFinish = true
+                }
+                
+                do {
+                    let ref = try db.collection("Challenge").document(challId).setData(from: challenge)
+                } catch let error {
+                    print("Regist Challenge Error" ,error)
+                }
+                
+            }
+            
+        })
+        
+        
+    }
+    
     
     
 }
