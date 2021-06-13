@@ -10,11 +10,14 @@ import UIKit
 import DLRadioButton
 
 class MakeChallengeVC: UIViewController {
+    var didLoad: Bool = false
+    var isFork: Bool = false
     
     var challenge: Challenge = Challenge.init()
     
     var genre: String? = nil {
         didSet {
+            if didLoad == false { return }
             if let genre = genre {
                 selectGenreBtn.setTitle(genre, for: .normal)
             }
@@ -22,6 +25,7 @@ class MakeChallengeVC: UIViewController {
     }
     var bank: String? = nil {
         didSet {
+            if didLoad == false { return }
             if let bank = bank {
                 selectBankBtn.setTitle(bank, for: .normal)
             }
@@ -56,9 +60,51 @@ class MakeChallengeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        didLoad = true
         setNaviBar()
         setBtnUI()
+        
+        if isFork ==  true {
+            setUIByFork()
+        }
+    }
+    
+    func setUIByFork() {
+        selectGenreBtn.setTitle(genre, for: .normal)
+        challengeTitleTxtField.text = challenge.title
+        
+        if challenge.term == 1 {
+            oneWeekBtn.isSelected = true
+        } else if challenge.term == 2 {
+            twoWeekBtn.isSelected = true
+        } else if challenge.term == 3 {
+            threeWeekBtn.isSelected = true
+        } else if challenge.term == 4 {
+            fourWeekBtn.isSelected = true
+        }
+        
+        if challenge.cntPerWeek == 1 {
+            oneCntBtn.isSelected = true
+        } else if challenge.cntPerWeek == 2 {
+            twoCntBtn.isSelected = true
+        } else if challenge.cntPerWeek == 3 {
+            threeCntBtn.isSelected = true
+        } else if challenge.cntPerWeek == 4 {
+            fourCntBtn.isSelected = true
+        }
+        
+        if challenge.price == 10000 {
+            price10000Btn.isSelected = true
+        } else if challenge.price == 30000 {
+            price30000Btn.isSelected = true
+        } else if challenge.price == 50000 {
+            price50000Btn.isSelected = true
+        } else if challenge.price == 70000 {
+           price70000Btn.isSelected = true
+        } else if challenge.price == 100000 {
+            price100000Btn.isSelected = true
+        }
+        
     }
     
     func setBtnUI() {

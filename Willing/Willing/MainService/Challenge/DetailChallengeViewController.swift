@@ -140,6 +140,65 @@ class DetailChallengeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func forkBtnClicked(_ sender: Any) {
+        let vc = MakeChallengeVC()
+        vc.isFork = true
+        
+        vc.genre = challenge?.subject
+//        vc.selectGenreBtn.setTitle(vc.genre, for: .normal)
+        vc.challenge.subject = vc.genre
+        
+        vc.challenge.title = challenge?.title
+//        vc.challengeTitleTxtField.text = challenge?.title
+        
+        if challenge?.term == 1 {
+//            vc.oneWeekBtn.isSelected = true
+            vc.challenge.term = 1
+        } else if challenge?.term == 2 {
+//            vc.twoWeekBtn.isSelected = true
+            vc.challenge.term = 2
+        } else if challenge?.term == 3 {
+//            vc.threeWeekBtn.isSelected = true
+            vc.challenge.term = 3
+        } else if challenge?.term == 4 {
+//            vc.fourWeekBtn.isSelected = true
+            vc.challenge.term = 4
+        }
+        
+        if challenge?.cntPerWeek == 1 {
+//            vc.oneCntBtn.isSelected = true
+            vc.challenge.cntPerWeek = 1
+        } else if challenge?.cntPerWeek == 2 {
+//            vc.twoCntBtn.isSelected = true
+            vc.challenge.cntPerWeek = 2
+        } else if challenge?.cntPerWeek == 3 {
+//            vc.threeCntBtn.isSelected = true
+            vc.challenge.cntPerWeek = 3
+        } else if challenge?.cntPerWeek == 4 {
+//            vc.fourCntBtn.isSelected = true
+            vc.challenge.cntPerWeek = 4
+        }
+        
+        if challenge?.price == 10000 {
+//            vc.price10000Btn.isSelected = true
+            vc.challenge.price = 10000
+        } else if challenge?.price == 30000 {
+//            vc.price30000Btn.isSelected = true
+            vc.challenge.price = 30000
+        } else if challenge?.price == 50000 {
+//            vc.price50000Btn.isSelected = true
+            vc.challenge.price = 50000
+        } else if challenge?.price == 70000 {
+//            vc.price70000Btn.isSelected = true
+            vc.challenge.price = 70000
+        } else if challenge?.price == 100000 {
+//            vc.price100000Btn.isSelected = true
+            vc.challenge.price = 100000
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }
 
 extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

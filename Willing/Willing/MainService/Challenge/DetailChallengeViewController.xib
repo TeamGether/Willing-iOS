@@ -68,6 +68,9 @@
                                                     <state key="normal" title="포크하기">
                                                         <color key="titleColor" name="WHITE"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="forkBtnClicked:" destination="-1" eventType="touchUpInside" id="zTd-cF-VMl"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" name="OPPRTUNITY"/>

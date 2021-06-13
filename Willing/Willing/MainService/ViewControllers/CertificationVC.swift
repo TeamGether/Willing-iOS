@@ -84,6 +84,7 @@ class CertificationVC: UIViewController {
         guard let userEmail = certUser?.email else { return }
         let vc = MyPageViewContoller()
         vc.userEmail = userEmail
+        print(vc)
 //        vc.loadView()
         self.navigationController?.pushViewController(vc, animated: true)
     }
