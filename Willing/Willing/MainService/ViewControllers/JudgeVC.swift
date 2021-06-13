@@ -81,16 +81,31 @@ extension JudgeVC: UITableViewDelegate, UITableViewDataSource {
         cell.layer.cornerRadius = 10
         
         let certDocu = certList[indexPath.section]
+        cell.cert = certDocu
         
-        cell.userNameLabel.text = certDocu.certtification.userName
-        cell.certTimeLabel.text = String(certDocu.certtification.timestamp).toSimpleDateTimeString()
-        cell.cheeringLabel.text = String(certDocu.certtification.cheering.count)
-        cell.questionLabel.text = String(certDocu.certtification.question.count)
+//        cell.userNameLabel.text = certDocu.certtification.userName
+//        cell.certTimeLabel.text = String(certDocu.certtification.timestamp).toSimpleDateTimeString()
+//        cell.cheeringLabel.text = String(certDocu.certtification.cheering.count)
+//        cell.questionLabel.text = String(certDocu.certtification.question.count)
+//
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        var reference = storageRef.child(certDocu.certtification.imgUrl)
+//        cell.certImgView?.sd_setImage(with: reference)
         
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        var reference = storageRef.child(certDocu.certtification.imgUrl)
-        cell.certImgView?.sd_setImage(with: reference)
+        DBNetwork.getCertificationById(docuId: certDocu.docuID, completion: { certData in
+            
+            cell.userNameLabel.text = certData.userName
+            cell.certTimeLabel.text = String(certData.timestamp).toSimpleDateTimeString()
+            cell.cheeringLabel.text = String(certData.cheering.count)
+            cell.questionLabel.text = String(certData.question.count)
+            
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let reference = storageRef.child(certData.imgUrl)
+            cell.certImgView?.sd_setImage(with: reference)
+            
+        })
         
         
         DBNetwork.getChallegneByDocuID(docuId: certDocu.certtification.challengeId) {
@@ -101,7 +116,9 @@ extension JudgeVC: UITableViewDelegate, UITableViewDataSource {
         DBNetwork.getUserByName(name: certDocu.certtification.userName) {
             userInfo in
             guard let userImg = userInfo.profileImg else { return }
-            reference = storageRef.child(userImg)
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let reference = storageRef.child(userImg)
             cell.userImgView.sd_setImage(with: reference)
         }
         

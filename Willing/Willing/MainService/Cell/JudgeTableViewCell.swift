@@ -10,6 +10,8 @@ import UIKit
 
 class JudgeTableViewCell: UITableViewCell {
     
+    var cert: CertDocu? = nil
+    
     @IBOutlet weak var userImgView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -39,5 +41,31 @@ class JudgeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func cheeringBtnClicked(_ sender: Any) {
+        if let _ = cert?.certtification.cheering.firstIndex(of: userName) {
+            
+        } else {
+            cert?.certtification.cheering.append(userName)
+            DBNetwork.correctCertification(certId: cert!.docuID, cert: cert!.certtification){ [self] in
+                cheeringLabel.text = String(Int(cheeringLabel.text!)! + 1)
+            }
+        }
+        
+    }
+    
+    @IBAction func questionBtnClicked(_ sender: Any) {
+        if let _ = cert?.certtification.question.firstIndex(of: userName) {
+            
+        } else {
+            cert?.certtification.question.append(userName)
+            DBNetwork.correctCertification(certId: cert!.docuID, cert: cert!.certtification){ [self] in
+                questionLabel.text = String(Int(questionLabel.text!)! + 1)
+
+            }
+        }
+    
+    }
+    
     
 }

@@ -380,5 +380,16 @@ struct DBNetwork {
         }
     }
     
+    static func correctCertification(certId: String, cert: Certification, completion: @escaping() -> Void) {
+        do {
+            let _ = try db.collection("Certification").document(certId).setData(from: cert) {
+                _ in
+                completion()
+            }
+        } catch let error {
+            completion()
+        }
+    }
+    
     
 }

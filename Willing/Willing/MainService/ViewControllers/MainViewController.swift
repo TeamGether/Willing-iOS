@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 var user: User?
+var userName: String = ""
 
 class MainViewController: UIViewController {
     @IBOutlet weak var challengeList: UITableView!
@@ -34,6 +35,12 @@ class MainViewController: UIViewController {
         
         getChallengeList()
         print("chall list ", challengeSummary)
+        
+        DBNetwork.getUserInfo(email: (user?.email)!, completion: {
+            userData in
+            userName = userData.name!
+        })
+
         
     }
     

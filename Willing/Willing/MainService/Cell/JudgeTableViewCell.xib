@@ -88,6 +88,9 @@
                                                 <state key="normal" title="  😁 응원해요  ">
                                                     <color key="titleColor" name="WHITE"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cheeringBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LdO-UW-FFY"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2f8-fK-wzH">
                                                 <rect key="frame" x="83" y="7" width="56.5" height="16"/>
@@ -115,6 +118,9 @@
                                                 <state key="normal" title="  🤔 의문이 들어요  ">
                                                     <color key="titleColor" name="WHITE"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="questionBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jPg-Cu-Max"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-Gd-BQl">
                                                 <rect key="frame" x="103" y="7" width="36.5" height="16"/>

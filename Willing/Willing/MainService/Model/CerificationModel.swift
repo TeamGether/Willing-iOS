@@ -11,7 +11,7 @@ import UIKit
 
 struct CertDocu {
     let docuID: String
-    let certtification: Certification
+    var certtification: Certification
 }
 
 struct Certification: Codable {
