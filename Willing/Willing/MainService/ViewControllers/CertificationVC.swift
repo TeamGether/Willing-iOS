@@ -34,9 +34,17 @@ class CertificationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
+        registCell()
 
         getCert()
         profileImgView.layer.cornerRadius = 25
+    }
+    
+    func registCell() {
+        commentTableView.register(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentCell")
     }
 
     func getCert() {
@@ -52,6 +60,7 @@ class CertificationVC: UIViewController {
             guard let userName = self.certification?.userName else { return }
             self.getUser(userName: userName)
             self.getChallenge(challId: cert.challengeId)
+            print("before get comment")
             self.getComment()
             
         }
@@ -70,8 +79,17 @@ class CertificationVC: UIViewController {
         }
     }
     
+    var commentList: Array<CommentDocu> = [] {
+        didSet {
+            commentTableView.reloadData()
+        }
+    }
+    
     func getComment() {
-        
+        DBNetwork.getComments(certImg: certification!.imgUrl) { commentDocuList in
+            print("comment docu list : ", commentDocuList)
+            self.commentList = commentDocuList
+        }
     }
     
     func getChallenge(challId: String) {
@@ -89,4 +107,49 @@ class CertificationVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var userView: UIView!
+    @IBOutlet weak var imageView: UIView!
+    var commentMode: Bool = false
+    @IBOutlet weak var commentBtn: UIButton!
+    @IBAction func commentBtnClicked(_ sender: Any) {
+        if commentMode == true {
+            userView.isHidden = false
+            imageView.isHidden = false
+            commentBtn.setTitle("▹ 댓글", for: .normal)
+            mainScrollView.isScrollEnabled = true
+            commentMode = false
+        } else {
+            userView.isHidden = true
+            imageView.isHidden = true
+            commentBtn.setTitle("▿ 댓글", for: .normal)
+            mainScrollView.isScrollEnabled = false
+            commentMode = true
+        }
+    }
+}
+
+extension CertificationVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = commentTableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
+        
+        let commentDocu = commentList[indexPath.row]
+        
+        cell.userNameLabel.text = commentDocu.comment.userName
+        cell.dateTimeLabel.text = commentDocu.comment.timestamp
+        cell.contentTextView.text = commentDocu.comment.content
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let reference = storageRef.child(commentDocu.comment.profileImg)
+        cell.userImgview.sd_setImage(with: reference)
+        
+        return cell
+    }
+    
+    
 }

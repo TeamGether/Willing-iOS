@@ -391,5 +391,31 @@ struct DBNetwork {
         }
     }
     
+    static func getComments(certImg: String, completion:@escaping(Array<CommentDocu>) -> Void) {
+        db.collection("Comment").whereField("imgId", isEqualTo: (certImg)).order(by: "timestamp").getDocuments() { (querySnapshot, err) in
+            var commentList: Array<CommentDocu> = []
+            
+            if let querySnapshot = querySnapshot {
+                
+                for document in querySnapshot.documents {
+                    let result = Result {
+                        try document.data(as: Comment.self)
+                    }
+                    switch result {
+                    case .success(let comment):
+                        print(comment)
+                        commentList.append(CommentDocu.init(docuId: document.documentID, comment: comment!))
+                        break
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
+            
+            completion(commentList)
+            
+        }
+        
+    }
     
 }

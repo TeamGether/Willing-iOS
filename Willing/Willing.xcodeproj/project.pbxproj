@@ -18,6 +18,9 @@
 		3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195D2657A4F900D04410 /* FriendsModel.swift */; };
 		3B3219612657AD2A00D04410 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */; };
 		3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */; };
+		3B6B6A0A2676494F006CD7F0 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6A082676494F006CD7F0 /* CommentTableViewCell.swift */; };
+		3B6B6A0B2676494F006CD7F0 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6B6A092676494F006CD7F0 /* CommentTableViewCell.xib */; };
+		3B6B6A0D26764BE9006CD7F0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6A0C26764BE9006CD7F0 /* CommentModel.swift */; };
 		3B7F50B2267094B0005E4614 /* JudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */; };
 		3B7F50B3267094B0005E4614 /* JudgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */; };
 		3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */; };
@@ -75,6 +78,9 @@
 		3B32195D2657A4F900D04410 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
 		3B32195F2657AD2A00D04410 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		3B6B6A082676494F006CD7F0 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		3B6B6A092676494F006CD7F0 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		3B6B6A0C26764BE9006CD7F0 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeTableViewCell.swift; sourceTree = "<group>"; };
 		3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JudgeTableViewCell.xib; sourceTree = "<group>"; };
 		3B8F4D18260C929700B7DA1F /* Willing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +212,7 @@
 				3BFD9BB52626AE1400F587B4 /* ChallengeModel.swift */,
 				3B32195B2653A56500D04410 /* CerificationModel.swift */,
 				3B32195D2657A4F900D04410 /* FriendsModel.swift */,
+				3B6B6A0C26764BE9006CD7F0 /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +282,8 @@
 				3B3219602657AD2A00D04410 /* FriendsTableViewCell.xib */,
 				3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */,
 				3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */,
+				3B6B6A082676494F006CD7F0 /* CommentTableViewCell.swift */,
+				3B6B6A092676494F006CD7F0 /* CommentTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				3BF0E192264CF7EA00EAFD64 /* MakeChallengeVC.xib in Resources */,
 				3BF5699F263EF4BF003B0EEA /* DetailChallengeViewController.xib in Resources */,
 				3BFD9B9E261F019800F587B4 /* FeedViewController.xib in Resources */,
+				3B6B6A0B2676494F006CD7F0 /* CommentTableViewCell.xib in Resources */,
 				3BFD9BA2261F01C100F587B4 /* FriendsViewController.xib in Resources */,
 				3BF0E196264D4B5C00EAFD64 /* CheckChallengeMakeVC.xib in Resources */,
 				3B3219622657AD2A00D04410 /* FriendsTableViewCell.xib in Resources */,
@@ -453,10 +463,12 @@
 				3BF0E18A264CF00900EAFD64 /* UIImage+Size.swift in Sources */,
 				3BF0E1A1264F997200EAFD64 /* SelectBankTableViewCell.swift in Sources */,
 				3BF0E195264D4B5C00EAFD64 /* CheckChallengeMakeVC.swift in Sources */,
+				3B6B6A0D26764BE9006CD7F0 /* CommentModel.swift in Sources */,
 				3BF0E19D264F978000EAFD64 /* SelectBankVC.swift in Sources */,
 				3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
 				3B05E8AE2663CD59003F9E85 /* String+Date.swift in Sources */,
+				3B6B6A0A2676494F006CD7F0 /* CommentTableViewCell.swift in Sources */,
 				3B05E8AB2663977B003F9E85 /* CertificationVC.swift in Sources */,
 				3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */,
 				3BC7256B2611660C00559D6C /* LoginViewController.swift in Sources */,
