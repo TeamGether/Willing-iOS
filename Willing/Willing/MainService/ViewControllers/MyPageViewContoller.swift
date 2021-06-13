@@ -30,6 +30,28 @@ class MyPageViewContoller: UIViewController {
     var isMyPage = true {
         didSet {
             setUI()
+            if isMyPage == false {
+                DBNetwork.getFriends(email: (user?.email)!, completion: {
+                    friends in
+                    if let _ = friends.following.firstIndex(of: (self.pageUser?.name)!) {
+                        self.didFollow = true
+                    } else { self.didFollow = false }
+                })
+            }
+        }
+    }
+    
+    var didFollow: Bool = false {
+        didSet {
+            if didFollow == true {
+                followBtn.setTitle("팔로잉 중", for: .normal)
+                followBtn.setTitleColor(UIColor(named: "WHITE"), for: .normal)
+                followView.backgroundColor = UIColor(named: "ACCOUNT")
+            } else {
+                followBtn.setTitle("팔로잉하기", for: .normal)
+                followBtn.setTitleColor(UIColor(named: "ACCOUNT"), for: .normal)
+                followView.backgroundColor = UIColor(named: "BG")
+            }
         }
     }
     
@@ -207,6 +229,21 @@ class MyPageViewContoller: UIViewController {
     @IBAction func finishedBtnClicked(_ sender: Any) {
         mode = .finished
     }
+    
+    @IBAction func followBtnClicked(_ sender: Any) {
+        DBNetwork.getUserInfo(email: (user?.email)!) { [self]
+            myData in
+            
+            DBNetwork.followOrUnfollow(userEmail: (user?.email)!, targetEmail: userEmail, userName: myData.name!, targetName: (pageUser?.name)!) {
+                self.viewDidLoad()
+            }
+        }
+        
+        
+
+        
+    }
+    
     
     
 }

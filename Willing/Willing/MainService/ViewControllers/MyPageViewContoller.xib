@@ -85,6 +85,9 @@
                                     <state key="normal" title="팔로잉하기">
                                         <color key="titleColor" name="ACCOUNT"/>
                                     </state>
+                                    <connections>
+                                        <action selector="followBtnClicked:" destination="-1" eventType="touchUpInside" id="7n8-YL-j32"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="BG"/>

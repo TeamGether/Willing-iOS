@@ -333,9 +333,52 @@ struct DBNetwork {
             
         })
         
-        
     }
     
+    static func followOrUnfollow (userEmail: String, targetEmail: String, userName: String, targetName: String, completion: @escaping() -> Void) {
+        
+        getFriends(email: userEmail) {
+            userFriends in
+            var userFriends = userFriends
+            
+            getFriends(email: targetEmail) {
+                targetFriends in
+                var targetFriends = targetFriends
+                
+                if let targetIndex = userFriends.following.firstIndex(of: targetName) { // 사용자가 타겟을 팔로우 할 때 -> 언팔로우하기
+                    userFriends.following.remove(at: targetIndex)
+                    if let userIndex = targetFriends.follower.firstIndex(of: userName) {
+                        targetFriends.follower.remove(at: userIndex)
+                    }
+                } else { // 사용자가 타겟을 팔로우하지 않을 때 -> 팔로우하기
+                    userFriends.following.append(targetName)
+                    if let _ = targetFriends.follower.firstIndex(of: userName) {
+                        
+                    } else {
+                        targetFriends.following.append(userName)
+                    }
+                }
+                
+                do {
+                    let _ = try db.collection("Follow").document(userEmail).setData(from: userFriends) {_ in
+                        do {
+                            let _ = try db.collection("Follow").document(targetEmail).setData(from: targetFriends) {_ in
+                                completion()
+                            }
+                        } catch let error {
+                            print("Regist Challenge Error" ,error)
+                            completion()
+                            
+                        }
+                    }
+                } catch let error {
+                    print("Regist Challenge Error" ,error)
+                    completion()
+                }
+                
+            }
+        }
+    }
     
     
 }
