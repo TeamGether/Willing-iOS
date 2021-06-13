@@ -355,7 +355,7 @@ struct DBNetwork {
                     if let _ = targetFriends.follower.firstIndex(of: userName) {
                         
                     } else {
-                        targetFriends.following.append(userName)
+                        targetFriends.follower.append(userName)
                     }
                 }
                 
