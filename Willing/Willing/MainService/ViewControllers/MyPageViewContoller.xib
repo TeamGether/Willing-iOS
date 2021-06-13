@@ -82,7 +82,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RA-ou-8lP">
                                     <rect key="frame" x="8" y="0.0" width="65" height="30"/>
-                                    <state key="normal" title="팔로잉하기">
+                                    <state key="normal" title="팔로우하기">
                                         <color key="titleColor" name="ACCOUNT"/>
                                     </state>
                                     <connections>

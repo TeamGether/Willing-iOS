@@ -48,7 +48,7 @@ class MyPageViewContoller: UIViewController {
                 followBtn.setTitleColor(UIColor(named: "WHITE"), for: .normal)
                 followView.backgroundColor = UIColor(named: "ACCOUNT")
             } else {
-                followBtn.setTitle("팔로잉하기", for: .normal)
+                followBtn.setTitle("팔로우하기", for: .normal)
                 followBtn.setTitleColor(UIColor(named: "ACCOUNT"), for: .normal)
                 followView.backgroundColor = UIColor(named: "BG")
             }
