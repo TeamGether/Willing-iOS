@@ -368,7 +368,9 @@ extension DetailChallengeViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func useTimer() {
-        
+        let vc = TimerViewController()
+        vc.challenge = challenge
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

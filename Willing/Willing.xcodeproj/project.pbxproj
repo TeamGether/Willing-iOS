@@ -21,6 +21,8 @@
 		3B6B6A0A2676494F006CD7F0 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6A082676494F006CD7F0 /* CommentTableViewCell.swift */; };
 		3B6B6A0B2676494F006CD7F0 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6B6A092676494F006CD7F0 /* CommentTableViewCell.xib */; };
 		3B6B6A0D26764BE9006CD7F0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6A0C26764BE9006CD7F0 /* CommentModel.swift */; };
+		3B730E5B2676FCD500721DEB /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B730E592676FCD500721DEB /* TimerViewController.swift */; };
+		3B730E5C2676FCD500721DEB /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B730E5A2676FCD500721DEB /* TimerViewController.xib */; };
 		3B7F50B2267094B0005E4614 /* JudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */; };
 		3B7F50B3267094B0005E4614 /* JudgeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */; };
 		3B8F4D1C260C929700B7DA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F4D1B260C929700B7DA1F /* AppDelegate.swift */; };
@@ -81,6 +83,8 @@
 		3B6B6A082676494F006CD7F0 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		3B6B6A092676494F006CD7F0 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		3B6B6A0C26764BE9006CD7F0 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		3B730E592676FCD500721DEB /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		3B730E5A2676FCD500721DEB /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		3B7F50B0267094B0005E4614 /* JudgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeTableViewCell.swift; sourceTree = "<group>"; };
 		3B7F50B1267094B0005E4614 /* JudgeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JudgeTableViewCell.xib; sourceTree = "<group>"; };
 		3B8F4D18260C929700B7DA1F /* Willing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Willing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,8 @@
 				3BFD9BA4261F01E200F587B4 /* MyPageViewContoller.xib */,
 				3B05E8A92663977B003F9E85 /* CertificationVC.swift */,
 				3B05E8AA2663977B003F9E85 /* CertificationVC.xib */,
+				3B730E592676FCD500721DEB /* TimerViewController.swift */,
+				3B730E5A2676FCD500721DEB /* TimerViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B730E5C2676FCD500721DEB /* TimerViewController.xib in Resources */,
 				3B05E8AC2663977B003F9E85 /* CertificationVC.xib in Resources */,
 				3BC7257326132BB900559D6C /* SignUpViewController.xib in Resources */,
 				3BC7257C26199BAD00559D6C /* MainViewController.xib in Resources */,
@@ -468,6 +475,7 @@
 				3BF0E199264E5FE000EAFD64 /* SelectGenreVC.swift in Sources */,
 				3BFD9B9D261F019800F587B4 /* FeedViewController.swift in Sources */,
 				3B05E8AE2663CD59003F9E85 /* String+Date.swift in Sources */,
+				3B730E5B2676FCD500721DEB /* TimerViewController.swift in Sources */,
 				3B6B6A0A2676494F006CD7F0 /* CommentTableViewCell.swift in Sources */,
 				3B05E8AB2663977B003F9E85 /* CertificationVC.swift in Sources */,
 				3B32195E2657A4F900D04410 /* FriendsModel.swift in Sources */,
